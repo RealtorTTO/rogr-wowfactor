@@ -1586,113 +1586,102 @@ function generateSellerPlan(n) {
 
   // Phase 1
   html += phaseHeader('Phase 1', 'Before the Listing Goes Live');
-  
+
   // Home condition actions
   if (state.homeCondition === 'immaculate') {
     html += actionItem(
-      `Tell ${n} their home is gorgeous — and that your marketing will match`,
-      `When a home shows beautifully, the seller has worked hard. Acknowledge that. Then show them you'll honor their effort with world-class marketing.`,
-      `"${n}, your home is stunning. I want you to know — I'm going to make sure the photos, the description, everything matches the pride you've put into this place. You deserve marketing as beautiful as this home."`
+      `Ask ${n} to walk you through the home and tell you the STORY of each room`,
+      `Buyers don't buy features — they buy the life they imagine living. "Updated kitchen" is forgettable. "The kitchen was the seller's love letter to Sunday morning pancakes with their grandkids" is unforgettable. The stories your seller tells you ARE your marketing. Every room has a memory, and that memory is what makes a buyer feel something. Use those stories in your listing description, your social media posts, your showing comments. The agent who markets a LIFE instead of a floor plan wins every time.`,
+      `"${n}, I want to do something a little different. Walk me through this home like you're telling a friend about it. When was this kitchen remodeled? What was the inspiration? What's your favorite thing about this room? I want to market the STORY of this house, not just the specs. Buyers don't fall in love with granite countertops — they fall in love with imagining themselves making breakfast here on a Saturday morning."`
     );
   } else if (state.homeCondition === 'lived-in') {
     html += actionItem(
-      `Have a warm, honest conversation about small improvements`,
-      `Lived-in homes need minor adjustments to show their best. Frame it as "let's make buyers fall in love" — not "here's what's wrong."`,
-      `"${n}, your home has such great bones. I want to talk about a few small things that can make a big difference in how buyers see it. Nothing major — think of it as getting dressed up for a first date. Your home already has a great personality; let's just make sure it shows."`
+      `Do a "Buyer Eyes Walkthrough" — see the home as a stranger seeing it for the first time`,
+      `Walk through ${n}'s home pretending you have never been there. In the first 7 seconds of entering each room, note every single thing that catches your eye — because that is all a buyer gets. The light switch plate that has been painted over. The smell of the cat box from the entryway. The family photos covering every wall that make buyers feel like they are intruding in someone else's home. Prioritize fixes by what buyers see FIRST, not what costs the most. The $3 fix a buyer notices immediately beats the $300 fix they never see.`,
+      `"${n}, I'm going to do something a little different — I'm going to walk through your home the way a buyer would, seeing it for the very first time. Then I'll give you a prioritized list of the fastest, cheapest things that will make the biggest visual impact. We're not renovating — we're removing distractions so buyers can see the home, not the stuff. Most of these things take an afternoon, not a weekend. And I promise, the payoff is ten times the effort."`
     );
   } else if (state.homeCondition === 'cluttered') {
     html += actionItem(
-      `Have an honest, compassionate conversation about decluttering and staging`,
-      `This is where most agents either wimp out or come across harsh. You can be direct AND kind. That's the Teresa way.`,
-      `"${n}, I want to be straight with you because I care about getting you the best possible result. Right now, buyers walk in and they see YOUR stuff — and that makes it hard for them to picture THEIR stuff here. I'd love to help you with a plan to simplify things. We don't have to do it all at once, and I've got people who can help. Can I put together a room-by-room checklist for you?"`
-    );
-    html += actionItem(
-      `Offer to connect them with a professional organizer or stager`,
-      `Don't just tell them what to do — help them do it. This separates the good agents from the great ones.`
+      `Show up with boxes and help them pack — don't just hand them a list`,
+      `This is where most agents either wimp out or accidentally insult the seller. Here is what nobody teaches you: clutter is EMOTIONAL. Those aren't just things — they are memories, comfort, identity. Telling someone to "declutter" can feel like telling them their life is too much. The agent who shows up with boxes and works alongside the seller builds more trust in three hours than most agents build in three months. Do not outsource this to a stager. YOUR presence is the gesture. The three hours you spend helping them pack up extra furniture will be worth more than any marketing spend you will ever make.`,
+      `"${n}, I know this might feel overwhelming, and I want you to know — I'm not going to just hand you a list and walk away. How about I come over Saturday with some boxes and we tackle the living room together? I'll bring coffee. We're a team on this. We'll label everything, we'll keep it organized, and I'll be right there the whole time. You don't have to do this alone."`
     );
   } else if (state.homeCondition === 'vacant') {
     html += actionItem(
-      `Discuss virtual staging options`,
-      `Empty rooms photograph poorly and feel cold. Virtual staging helps buyers see the potential without the expense of physical staging.`,
-      `"${n}, empty rooms can actually feel smaller in photos — isn't that counterintuitive? I'd love to do virtual staging on the key rooms. It helps buyers emotionally connect with the space. I'll handle all of it."`
+      `Add three real items that create scale and warmth — $30, massive impact`,
+      `Virtual staging helps online, but buyers walk through in person and feel the emptiness. Here is a secret that costs almost nothing: put ONE doormat at the entrance, a single vase with fresh flowers on the kitchen counter, and a throw blanket draped on the stair railing or over a windowsill. These three items create scale so buyers can judge room size, and warmth so the house does not feel abandoned. Before an open house, simmer cinnamon sticks in water on the stove — yes, in a vacant house. The smell makes it feel like someone loves this home. Buyers walk in and something shifts in their chest before they even know why.`,
+      `"${n}, I'm going to do virtual staging for the online photos — but I've also got a trick for in-person showings. I'll place a few small real items throughout the house — a doormat, fresh flowers, a throw blanket — just enough so buyers can feel the scale of the rooms and start imagining living here. Cost is about thirty bucks. I've seen it completely change how people respond to a vacant home."`
     );
   }
 
   // Price conversation
   if (state.priceRealistic === 'yes') {
     html += actionItem(
-      `Reinforce their trust with a thorough CMA presentation`,
-      `Even trusting clients deserve a detailed explanation. It shows respect for their intelligence and strengthens your position as the expert.`,
-      `"${n}, I put together a detailed market analysis for you. I know you trust my guidance, and I want to make sure you feel 100% confident in our strategy. Let me walk you through the numbers — I want you to own this decision, not just follow my lead."`
+      `Tell ${n} the STORY of three similar homes — not just a spreadsheet`,
+      `Even when a seller trusts you, a CMA is numbers on a page. Stories stick. Find three comparable homes and tell what happened to each: one priced right that got multiple offers and sold over asking in 5 days. One priced too high that sat 60 days, had a price reduction, and sold under where it would have if priced correctly from day one. And one priced way too high that expired, got relisted with a new agent, and carried the stigma of a stale listing. When ${n} can SEE themselves in the story of the home priced right, they will own the pricing decision — not just follow your advice.`,
+      `"${n}, I trust your instincts and I want to make sure you feel rock-solid about our strategy. Let me tell you about three homes on your street. One priced right — five offers in four days, sold for twelve thousand over asking. One priced twenty thousand too high — sat for sixty days, had to reduce twice, and sold for less than it would have if they'd just priced it right from the start. And one that was priced so high it expired and had to relist with a new agent. Same house, completely different outcomes — and the only difference was the pricing strategy on Day 1."`
     );
   } else if (state.priceRealistic === 'somewhat') {
     html += actionItem(
-      `Educate with empathy — show, don't just tell`,
-      `They want to believe their home is worth more. That's emotional, not illogical. Lead with data, but wrap it in empathy.`,
-      `"${n}, I completely understand wanting top dollar — this is YOUR home and it's worth a lot to you. Let me show you what similar homes in the neighborhood have actually sold for. The market tells us a story, and I want us to price it so we attract the most buyers and create competition. That's how we get you the strongest offers."`
+      `Let ${n} name their price first — then show the truth and let them reach their own conclusion`,
+      `The biggest mistake agents make is TELLING the seller their price is wrong. People do not resist information — they resist being told what to think. Ask the seller to name their number first. Listen without reacting — no wince, no head shake, nothing. Then say "I hear you. Let me show you something." Pull up the real data. Walk them through it. Let the silence do the work. When a seller reaches the right conclusion on their own, they own it. When you tell them, they resent it. Same destination, completely different journey.`,
+      `"${n}, before I show you anything, I want to hear from you. What number are you hoping for? ... [Listen. Do not react.] I hear you. Let me show you something. Here's what the last six homes like yours actually sold for — not what they listed for, what they SOLD for. And here's what the ones that sat on the market had in common. I'm not here to tell you what your home is worth. I'm here to show you what the market is saying, and then we'll decide together."`
     );
   } else if (state.priceRealistic === 'no') {
     html += actionItem(
-      `Have the pricing conversation — direct, loving, and backed by data`,
-      `This is the moment that defines your value. Most agents cave here. You won't — because you care about ${n}'s outcome more than getting the listing.`,
-      `"${n}, I need to be honest with you because that's the only way I know how to do business. I want to get you every penny your home is worth — and I'm worried that if we price it where you're thinking, we'll actually end up with LESS money, not more. Here's why: when a home sits on the market, buyers start wondering what's wrong with it. Price reductions feel desperate. But when we price it right from day one, we create urgency and competition. Can I show you the numbers?"`
-    );
-    html += actionItem(
-      `Prepare a "what happens when we overprice" visual timeline`,
-      `Create a simple one-page document showing Days 1-7 (most traffic), Days 8-21 (traffic drops), Day 30+ (stale listing, price reductions, lower offers). Visual learners need this.`
+      `Be willing to LOSE this listing rather than take it overpriced`,
+      `This is the moment that separates a great agent from a desperate one. Most agents cave because they want the sign in the yard. You will not — because you care about ${n}'s outcome more than you care about getting the listing. An overpriced listing does not sell. It sits, it stigmatizes, it price-reduces, and the seller ends up with less money AND a worse experience. The agent who has the courage to say "I would rather lose your listing than watch you lose money" is the agent who earns trust that lasts a lifetime. If they go with someone who promises a higher price, that agent will be back with a price reduction in 30 days — and ${n} will wish they had listened to you.`,
+      `"${n}, I have to be straight with you because that is the only way I know how to do this. I want to get you every single penny your home is worth. And I'm worried that the price you're thinking will actually cost you money, not make you money. If another agent tells you they can sell it for that number, I need you to ask yourself: does that agent care about getting you to the closing table, or do they just want a sign in the yard? Because I care about the closing table. And sometimes that means telling you something you don't want to hear. I'd rather lose this listing today than watch you lose twenty thousand dollars over the next ninety days."`
     );
   }
 
   // Living in home
   if (state.livingInHome === 'yes') {
     html += actionItem(
-      `Create a showing survival kit and plan`,
-      `Living in a home during showings is stressful. Acknowledge it. Make it easier.`,
-      `"${n}, I know having strangers walk through your home isn't exactly fun. Here's what I want to do — I'll always give you as much notice as possible, and I've put together a quick checklist to make showing prep take less than 15 minutes. And here's a little something to make showing days a bit easier."`
-    );
-    html += actionItem(
-      `Drop off a "Showing Day Survival Basket"`,
-      `A small basket with a nice candle, snacks, a gift card to a local coffee shop, and a note: "Go grab a coffee on me — I've got your house covered." Cost: $20. Impact: priceless.`
+      `Build a showing schedule around ${n}'s REAL life — then text after every single showing`,
+      `Do not just say "I'll give you notice." Ask them specifically: What time does your family eat dinner? When do the kids do homework? When is your worst time of day? Then block those times from showings entirely. Most agents treat showing access like the seller should just deal with it. You are going to treat their home like what it is — the place where their life happens. And after every single showing, send a personal text: "Your house is back to being your home. Thank you for sharing it today." That text costs you nothing. It means everything. It tells the seller they are seen, not just tolerated.`,
+      `"${n}, I need to ask you some questions that most agents don't think to ask. What time does your family eat dinner? When do the kids do homework? What's the worst time of day for a showing? I'm going to block those times completely — your life doesn't stop because we're selling a house. And after every showing, I'll text you personally to let you know it's done and the house is yours again. Deal?"`
     );
   }
 
   // Situation-based gesture
   if (has('growing-family')) {
     html += actionItem(
-      `Bring coloring books and a small toy for the kids`,
-      `A $5 gesture that tells the parents: "I see your whole family, not just the transaction." Include a note: "For the little ones — we know moving days are a big adventure!"`,
+      `Learn the kids' names and ages — and reference them throughout the entire transaction`,
+      `Almost every agent focuses on the adults. Almost no agent acknowledges that selling a home is hard on CHILDREN too. The kid whose bedroom is being shown to strangers. The toddler whose routine is disrupted by showings. When you learn the children's names and check in on them by name throughout the process, you become unforgettable. "How did little Emma feel about strangers in her room today?" — that one sentence tells the parents you see their whole family, not just the transaction. This is not a coloring-book moment. This is a "you understand what parenthood is" moment.`,
+      `"${n}, tell me about your kids — names and ages. I ask because I want to make sure this process is as easy on them as it is on you. Moving is a lot for little ones, and I want to check in on them too, not just the house stuff. How's [child's name] handling everything?"`
     );
   }
 
   if (has('pets')) {
     html += actionItem(
-      `Ask about their pets by name and plan showing logistics around them`,
-      `Nothing stresses a pet owner more than strangers in the house with their animals. Proactively address it.`,
-      `"${n}, tell me about your pets — I want to make sure showing days are as stress-free as possible for them too. Do they need to leave during showings, or is there a room where they're comfortable? I'll make sure every showing agent knows the plan."`
+      `Put a sign at the front door with the pet's name during every showing`,
+      `Do not just plan logistics — make a small sign for showing days that says "Please be mindful — our family pet [pet name] lives here." Hang it on the front door during every showing. This does three things most agents never think about. It warns buyers and their agents to be respectful. It subconsciously tells buyers this home was loved and cared for. And it makes ${n} feel like you understand that their pet is family, not an inconvenience. Plan the logistics too — where the pet goes during showings, how to minimize stress — but the sign is the thing they will tell their friends about.`,
+      `"${n}, tell me about your pets — names, personalities, the whole thing. I want to make sure showing days are stress-free for them too. Here's what I'm going to do: I'll put a small sign on the front door during every showing that says 'Please be mindful — our family pet [name] lives here.' It lets everyone know to be respectful, and honestly, it tells buyers this home was loved. Now let's figure out the best plan for [pet name] during showings — do they do better leaving or staying in a quiet room?"`
     );
   }
 
   if (has('retiring')) {
     html += actionItem(
-      `Acknowledge this chapter of their life with genuine warmth`,
-      `Retirement is emotional. This house probably holds decades of memories. Don't rush past that.`,
-      `"${n}, before we dive into the business side of things, I just want to say — this home has been a part of your story for a long time. I want to make sure we honor that as we find the right buyer. Someone who'll love it the way you have."`
+      `Ask: "What is the one thing about this house you will miss the most?" — then honor it`,
+      `This question unlocks something most agents never access. When a retiree tells you what they will miss most, they are telling you what this house MEANT to them. And you can honor that in a way nobody else will. If they say "the garden" — take a photo of it in full bloom and frame it as their closing gift. If they say "the front porch" — write that into the listing description so the next owner knows this was a loved space. If they say "the kitchen where I taught my daughter to cook" — use that story in your marketing. You are not just selling a house. You are transferring the love that was poured into it.`,
+      `"${n}, before we dive into the business side, I want to ask you something. What's the one thing about this house you'll miss the most? ... [Listen carefully. Remember exactly what they say. You will use this later.] That's beautiful. I want to make sure we honor that — in the way we market this home and in how we say goodbye to it. Someone is going to love this house the way you have, and I'm going to make sure the right person finds it."`
     );
   }
 
   if (has('divorce')) {
     html += actionItem(
-      `Set communication ground rules early and maintain strict neutrality`,
-      `In a divorce, the house is often the most emotional asset. Your job is to be a steady, neutral presence for everyone involved.`,
-      `"I want you to know that I'm going to treat both of you with equal respect and transparency throughout this process. Everything I share with one of you, I'll share with the other. My only agenda is getting you both the best possible outcome so you can move forward."`
+      `Never meet with both parties at the same time unless they specifically request it`,
+      `In a divorce, the house is often the most emotional asset on the table. Your job is not to be a messenger — it is to be a mediator. NEVER meet with both parties at the same time unless they specifically ask you to. Handle communication separately. Keep a written record of every single decision — who agreed to what, when, in writing. This protects everyone, including you. When emotions run high, memory gets selective. Your documentation is what prevents "I never agreed to that" from derailing the sale.`,
+      `"I want to set some ground rules that will make this smoother for everyone. I'm going to communicate with each of you separately unless you tell me otherwise. Every decision we make, I'll confirm in writing so there's never any confusion. My only agenda is getting you both to the closing table with the best possible outcome so you can each move forward. I'm not on anyone's side — I'm on the side of getting this done right."`
     );
   }
 
   if (has('lost-spouse')) {
     html += actionItem(
-      `Lead with compassion — this is not just a sale, it's a goodbye`,
-      `Selling a home after losing a spouse may be the hardest thing they've done since the loss itself. Slow down. Be patient. Be human.`,
-      `"${n}, I want you to know there is absolutely no rush here. We move at YOUR pace. If you need to take a break, if something feels too hard, you tell me and we pause. This is about you, not a timeline."`
+      `Ask: "Is there anyone you would like to bring with you to the major decision points?"`,
+      `This is one of the most profound things an agent can do. Do not assume they want to go through this alone — but do not assume they want company either. Let them choose. Some people want a grown child beside them at the listing appointment. Some want their pastor at closing. Some want to do it alone because that is how they prove to themselves they can. The question itself is the gift — it says "I see that this is enormous, and I want you to have whatever support you need." Nobody asks this. You will.`,
+      `"${n}, I want you to know there is absolutely no rush on any of this. We move at your pace, period. And I want to ask — is there anyone you'd like to bring along for the big decision points? A family member, a friend, your pastor, anyone? Some people want someone beside them, some prefer to do it on their own. Either way is perfectly fine. I just want you to have whatever makes you feel most comfortable."`
     );
   }
 
@@ -1700,109 +1689,109 @@ function generateSellerPlan(n) {
   html += phaseHeader('Phase 2', 'First 2 Weeks on Market');
 
   html += actionItem(
-    `Set up a communication rhythm from Day 1`,
-    `Don't wait for them to wonder what's happening. Be the agent who over-communicates — in their preferred way.`,
-    `"${n}, here's what I promise you: every [Monday and Thursday / after every showing — adapt to their preference], you'll hear from me with an update. Even if the update is 'nothing new yet,' I'll check in. You will never have to chase me down."`
+    `Report your ACTIONS, not just your results — silence feels like abandonment`,
+    `Here is what most agents get wrong about communication: they only reach out when there is news. No showings this week? They go silent. And the seller sits at home thinking "Did my agent forget about me? Is anything happening? Did I make a mistake hiring them?" Even when there is nothing to report, the agent should say what they ARE DOING. "No showings yet, but here's what I did this week to market your home" — that sentence is the difference between a seller who trusts you and a seller who is secretly calling other agents.`,
+    `"${n}, here's my promise: every [Monday and Thursday — adapt to their preference], you'll hear from me. Period. And I'm not just going to tell you what happened — I'm going to tell you what I'm actively doing. Even if there are no showings yet, I'll say: 'No showings this week, but here's what I did — I boosted your listing on social media, I called three agents with buyers in this price range, and I'm doing a broker open house on Tuesday.' You'll never wonder if I'm working. Because I am."`
   );
 
   html += actionItem(
-    `Don't just forward showing feedback — translate it`,
-    `Raw showing feedback can be confusing or hurtful. Be the filter. Frame everything constructively.`,
-    `Instead of forwarding "Nice home but kitchen felt dated," call ${n} and say: "Great news — we had a showing today and the buyers loved the layout and the backyard. They mentioned the kitchen wasn't quite their style, which is totally expected — that's a personal taste thing. The important thing is they spent 30 minutes here, which tells me they were seriously interested."`
+    `After 5-6 showings, present a "Pattern Report" — not individual feedback`,
+    `Individual showing comments are noise. "They loved the yard." "Kitchen felt small." "Nice home but not for us." None of that is actionable on its own. But PATTERNS are gold. After 5-6 showings, analyze all the feedback together. If 5 out of 6 buyers mention the yard, that tells you something real. If 4 out of 6 mention the same room, that is not one person's opinion — that is the market talking. Present patterns, not individual comments. This positions you as the analyst, not the messenger.`,
+    `Instead of forwarding individual feedback, wait until you have 5-6 showings of data. Then call ${n}: "I've been collecting all the feedback and I want to share what I'm seeing. Out of six showings, five mentioned the backyard — that's our strongest selling point and I'm going to lean into that in our marketing. Three mentioned the master bathroom felt small, which tells me we might want to open those blinds and clear the counter before the next round. Individual comments are just opinions. But when I see patterns, that's the market telling us something actionable."`
   );
 
   if (has('relocating')) {
     html += actionItem(
       `Connect ${n} with trusted resources in their new city`,
-      `This goes beyond your job description — and that's exactly why it matters.`,
+      `This goes beyond your job description — and that is exactly why it matters. Most agents wave goodbye at closing. The one who helps the seller get settled in their next life earns referrals from two zip codes.`,
       `"${n}, I know you've got a lot on your plate with the move. I've reached out to a couple of agents I trust in [new city] — would it be helpful if I connected you? I want to make sure you're taken care of on that end too."`
     );
   }
 
   html += actionItem(
-    `Week 1: Drop off a thoughtful small gift`,
+    `Week 1: Prove you were listening — not with a generic gift, but with a SPECIFIC gesture`,
     has('growing-family') ?
-      `Bring a small activity kit for the kids with a note: "We know showing days are hard on the little ones. This is for them — a little adventure kit to make the wait more fun."` :
+      `Think back to your listing appointment. Did the seller mention where they are moving? A hobby? Something their kids are into? Research one thing connected to what they told you and send it. If the kids play soccer and they are moving to a new town, find the local youth soccer league info and text it over. The gesture is not the item — it is the proof that you heard them. That is what people remember.` :
       has('downsizing') ?
-        `Bring a beautiful journal or scrapbook with a note: "For all the memories you're taking with you to the next chapter."` :
+        `During your listing appointment, this seller told you something personal about their next chapter. Maybe they mentioned traveling, or being closer to grandchildren, or finally having time for a hobby. Research ONE thing connected to that and send it. A brochure for the art class near their new place. A restaurant recommendation in their new town. The gesture proves you were listening — and that is worth more than any scrapbook.` :
         has('pets') ?
-          `Bring a bag of quality pet treats with a note: "For the real boss of the house. Thanks for sharing your home with all these visitors!"` :
-          `Bring a small succulent plant or candle with a handwritten note: "Thinking of you during this process. You're doing great and I'm right here with you every step."`
+          `Think about what ${n} told you about their pets, their next move, their life. Find one thing that connects to something they said — not something generic. If they mentioned their dog loves a certain park and they are moving across town, find the dog park nearest their new place. Text it to them. That proves you listened.` :
+          `Think back to your listing appointment. What did ${n} tell you about their life, their hobbies, where they are going next? Research one specific thing connected to what they said and send it. If they mentioned loving Italian food and they are relocating, find the best Italian restaurant in their new city. If they mentioned gardening, send them an article about the growing season in their new area. The gesture is not the item — it is the proof that you heard them.`
   );
 
   // Phase 3
   html += phaseHeader('Phase 3', 'Under Contract');
 
   html += actionItem(
-    `Proactively prepare ${n} for the inspection`,
-    `Don't wait for inspection day to explain what might happen. Get ahead of it.`,
-    `"${n}, now that we're under contract — congratulations! — I want to walk you through what comes next. The buyer will do a home inspection, and here's what I want you to know: EVERY home has something on an inspection report. That's normal. It does NOT mean the deal is falling apart. I'll walk you through everything and we'll handle it together."`
+    `Attend the last 30 minutes of the buyer's inspection — this is strategic, not optional`,
+    `Most listing agents skip the inspection entirely. They wait for the repair request to land in their inbox and then react. The agent who shows up has a massive advantage. You see exactly what the buyer sees. You can contextualize issues in real time — "That crack has been there for 15 years and has never moved, it's cosmetic." You are prepared before the repair request even arrives. And the buyer's agent knows you are engaged, present, and protecting your client. This one move prevents more surprise repair demands than anything else you can do.`,
+    `"${n}, the buyer's inspection is scheduled for [date]. I'm going to be there for the last 30 minutes when the inspector does the walkthrough. I want to see exactly what comes up so I can get ahead of any repair requests instead of being caught off guard. I'll call you that evening and walk you through what I saw — no surprises."`
   );
 
   html += actionItem(
-    `Keep them informed without overwhelming them`,
-    `Under contract, sellers often feel like they're in the dark. Your job is to give them just enough information to feel confident, without creating anxiety.`,
-    `Send a brief weekly status update: "Here's where we are this week: [milestone completed]. Next up: [what's coming]. Everything is on track. I'll let you know the minute anything needs your attention."`
+    `Proactively answer what ${n} is worrying about but has not asked yet`,
+    `Under contract, sellers worry in silence. They are thinking about the appraisal. They are wondering if the buyer's financing is solid. They are scared the inspection will kill the deal. But most sellers will not call and ask — they do not want to seem anxious or difficult. The agent who gets ahead of the unasked question is the agent who builds unshakable trust. Do not wait for ${n} to bring it up. Name it first. "I know you're probably wondering about the appraisal" — that sentence tells them you are inside their head, one step ahead, and they can relax.`,
+    `"${n}, I want to get ahead of something you might be thinking about but haven't asked. The appraisal is scheduled for [date]. Here's what happens: the appraiser comes in, looks at the home, and compares it to recent sales. I've already pulled the comps and I feel good about where we are. If anything comes up, I'll have a plan ready. I don't want you worrying about this — that's my job."`
+  );
+
+  html += actionItem(
+    `Build a relationship with the buyer's agent — collaborative, not adversarial`,
+    `This is the move that prevents more deals from falling apart than anything else. Most agents wait for the repair request, then start negotiating from opposing corners. Instead, call the buyer's agent after the inspection — before any formal request — and simply ask: "What does your buyer need to feel good about moving forward?" That question changes everything. It signals collaboration. It gives you intelligence. It lets you solve problems before they become negotiations. The agent on the other side will work WITH you instead of against you because you treated them like a partner, not an opponent.`,
+    `Call the buyer's agent: "Hey, I know the inspection is done. Before we get into the formal back-and-forth, I wanted to ask — what does your buyer need to feel good about moving forward? I want to make this work for everyone, and I'd rather have a conversation than trade paperwork." Then call ${n}: "I just spoke with the buyer's agent. Here's where their head is at, and here's my recommendation for how we handle it. We're in a good position."`
   );
 
   if (has('divorce')) {
     html += actionItem(
       `Be extra meticulous about equal communication`,
-      `During the contract phase, tensions can rise. Keep both parties equally informed, never take sides, and document everything.`,
+      `During the contract phase, tensions can rise. Keep both parties equally informed, never take sides, and document everything in writing.`,
       `Send identical updates to both parties. If one calls you to vent about the other, listen compassionately but redirect: "I hear you. My job is to make sure this sale goes as smoothly as possible for everyone. Let me focus on that for you."`
     );
   }
-
-  html += actionItem(
-    `Mid-transaction check-in: "How are YOU doing?"`,
-    `Not "how's the deal going" — how are THEY doing. This is the human moment most agents skip.`,
-    `"${n}, I just wanted to check in — not about the house, but about YOU. How are you feeling about everything? Is there anything I can do to make this easier?"`
-  );
 
   // Phase 4
   html += phaseHeader('Phase 4', 'Closing & Beyond');
 
   html += actionItem(
-    `Closing day: Make it special`,
+    `The closing gift should make them cry, not smile — prove you were listening`,
     has('lost-spouse') ?
-      `This is a deeply emotional day. Be sensitive. Bring tissues. Give them space to feel whatever they feel. A simple card that says: "This took courage. I'm proud of you."` :
+      `This is a deeply emotional day. Be sensitive. Bring tissues. Give them space. Your gift should honor what they told you they would miss most about this home. If they said "the garden," have a photo of it framed. If they said "the front porch where we sat every evening," write a small note about that porch. The gift says: "I heard you. I saw what this house meant." A simple card: "This took more courage than anyone knows. I am proud of you."` :
       has('retiring') ?
-        `Bring a small gift that celebrates their next chapter — a book about their new hobby, a gift card for a restaurant in their new area, or a simple framed photo of their home with a note: "The next chapter is going to be beautiful."` :
+        `Remember what they told you they would miss most. If it was the garden, frame a photo of it. If it was the kitchen, find a recipe book from their favorite cuisine. Your closing gift should prove you listened to something they said in passing — not something obvious. The less it costs and the more personal it is, the more powerful it becomes. Add a note: "The next chapter is going to be extraordinary. You earned every bit of it."` :
         has('divorce') ?
-          `Keep it professional and respectful. A simple card: "You handled this with grace. Here's to a fresh start." Avoid anything that could feel like you're minimizing what they've been through.` :
+          `Keep it respectful and forward-looking. A simple, handwritten note: "You handled this with more grace than you probably realize. Here's to whatever comes next." Nothing that references the past. Nothing that could feel like you are minimizing what they went through. Clean, dignified, done.` :
           has('growing-family') ?
-            `Bring a small gift for the kids — something they can enjoy in the car or new home. For the parents: a gift card to their favorite takeout spot with a note: "First night dinner is on me. You've earned it."` :
-            `Bring a personalized closing gift. Not just a generic cutting board — something tied to what you learned about them. If they love coffee, a bag from a local roaster. If they love wine, a bottle from a local vineyard. The specificity is what makes it memorable.`
+            `Think about what the kids told you, what the parents mentioned in passing. If the mom said she dreamed of a playroom in the new house, find a small item for it. If the dad mentioned wanting a grill on the new patio, get him a grilling spice set. The gift should prove you heard something specific — not just "here's a cutting board." Add a handwritten note: "Your family made this house feel like a home. The next one is going to be even better."` :
+            `The closing gift philosophy: it should make them cry, not just smile. It should prove you were listening to something they said in PASSING — not something obvious. If the seller mentioned their grandmother's recipe during a conversation, have it hand-lettered and framed. If they said they have dreamed of a beach vacation after the sale, give them a small item connected to that dream. If they mentioned a favorite local restaurant, get a gift card with a note that references the conversation. The less it costs and the more personal it is, the more powerful it becomes.`
   );
 
   html += actionItem(
-    `The 48-hour post-closing call`,
-    `This is the single most important call in your entire relationship. Most agents disappear after closing. You won't.`,
-    `"${n}, I just wanted to call and see how you're doing. I know closing can feel like a whirlwind, so I wanted to make sure you're feeling good about everything. Is there anything you need? ... And I just want to say — it was a genuine pleasure working with you. Thank you for trusting me with something this important."`
+    `The 48-hour call: say something SPECIFIC, not generic`,
+    `Do not call and say "How are you doing?" That is what every agent says. Instead, say something that proves ${n} is not just another closed file. Reference a specific moment from your time together. Mention the house. Make it real. The difference between "just checking in" and "I drove past your old house today and thought of you" is the difference between an agent they forget and an agent they send every person they know.`,
+    `"${n}, I drove past your old house today and thought of you. How are you feeling about everything? ... I keep thinking about [specific moment — the day you listed, the way you reacted to the first offer, something personal]. Working with you was really special for me. I mean that. If anything comes up — anything at all — I'm always just a call away."`
   );
 
   html += actionItem(
-    `30-day check-in`,
-    `A quick text or call, depending on their preference. Just touching base.`,
-    `"Hey ${n}! Just thinking about you and wanted to see how everything is going. Settling in to the new chapter? Let me know if you need anything at all."`
+    `30-day check-in: Be USEFUL, not salesy — send them a referral TO them`,
+    `Do not text "just checking in." That is code for "I want referrals." Instead, be genuinely useful. Think about what ${n} needs in their new life and provide it. A restaurant recommendation. A handyman you trust. A dry cleaner. The plumber they mentioned needing. When you are useful with no agenda, you become indispensable. People refer the person who helps them, not the person who asks them for help.`,
+    `"Hey ${n}! You mentioned you needed a good plumber — here's mine, tell him I sent you. He's honest and he won't overcharge you. Hope you're settling in great. Let me know if you need anything else — I've got a whole list of people I trust."`
   );
 
   html += actionItem(
-    `60-day check-in with a small gift`,
-    `This is where you separate yourself from every other agent they've ever met. A small seasonal gift or handwritten card.`,
-    `Mail a handwritten note: "${n}, I hope the last couple of months have been wonderful. I just wanted you to know I'm still here if you ever need anything — even if it's just a recommendation for a good [plumber/painter/restaurant]. I'm always just a call away."`
+    `60-day check-in: A HANDWRITTEN note referencing something personal`,
+    `Not a text. Not an email. A handwritten card mailed to their new address. Reference something specific from your transaction together — an inside joke, a stressful moment you got through, a funny memory. Handwritten notes are so rare now that they feel like treasures. This is the touch that makes ${n} think of you every time someone says the word "real estate."`,
+    `Mail a handwritten card: "${n}, I still laugh about the day [specific funny or memorable moment from the transaction]. Hope you're loving the new chapter. I think about our time working together and it makes me smile. If you ever need anything — even just someone to vent to about homeowner stuff — you know where to find me."`
   );
 
   html += actionItem(
-    `90-day check-in: The natural referral moment`,
-    `By now, you've been in their life for months. The referral conversation should feel natural — not transactional.`,
-    `"${n}, I was just thinking about you. How are things going? ... That's so great to hear. Listen, I just wanted you to know — if you ever have anyone in your life who's thinking about buying or selling, I'd take care of them the exact same way I took care of you. No pressure, just know that door is always open."`
+    `90-day check-in: Plant the seed naturally — never ask directly for referrals`,
+    `Do NOT ask for referrals at 90 days. Instead, tell ${n} something that plants the seed without any pressure. Mention that you just helped another family — it signals that you are active and successful. It makes them think about who they know. It creates the association between "people I care about" and "my agent" without any ask at all. People give referrals when they feel good, not when they feel obligated.`,
+    `"Hey ${n}, I just helped another family in your old neighborhood find a beautiful home. Made me think of you — hope you're doing amazing. Feels like yesterday we were in the thick of it together. Miss working with you!"`
   );
 
   html += actionItem(
-    `Set a calendar reminder for their sale anniversary`,
-    `One year from now, send a card or a text. This is the long game. This is how you build a referral-based business that runs on relationships, not ads.`,
-    `"${n}, can you believe it's been a year since we closed? I hope this year has been everything you hoped for. I think about our time working together and I'm so glad it all came together the way it did. Here's to many more great years ahead!"`
+    `Anniversary: Send their home's current estimated value — useful AND memorable`,
+    `Forget "happy home-iversary." Instead, send ${n} information that is actually useful AND positions you as the market expert. Pull an estimated value for the home they sold (or bought), and send it with context. This gives them real information, keeps you relevant, and reminds them — without saying it — that you are the person who knows this market better than anyone.`,
+    `"${n}, can you believe it's been a year? I was looking at market data and wanted you to know — your old home has appreciated approximately $[X] since you sold. You timed it well. I hope this year has been everything you dreamed. If you ever want to know what your current home is worth, or if anyone you know is curious about the market, you know I'm always happy to run the numbers. Cheers to year two."`
   );
 
   return html;
@@ -1818,41 +1807,41 @@ function generateBuyerPlan(n) {
   // Pre-approval
   if (state.preApproved === 'no') {
     html += actionItem(
-      `Have the pre-approval conversation — gently but firmly`,
-      `Without pre-approval, ${n} will lose the home they love. You're not being pushy — you're protecting them.`,
-      `"${n}, before we start looking at homes — and I know that's the fun part — I want to make sure you're set up to actually WIN when you find the one you love. In this market, sellers won't even consider an offer without a pre-approval letter. I don't want you to fall in love with a house and then not be able to move on it. I've got a few lenders I trust who will make this easy and pressure-free. Can I make an introduction?"`
+      `Call the lender FIRST, brief them, then make the introduction like a VIP handoff`,
+      `Do not just "connect them with a lender." That is what every agent does — fire off a text with a phone number and call it done. Instead, call your lender first. Brief them on ${n}'s situation. Tell the lender "Take care of them." Then tell ${n}: "I already called [lender name] and told them about you. They're expecting your call." This makes ${n} feel like a VIP, not a lead being handed off. The lender is prepared. ${n} feels cared for. And you look like someone with a network that works for their clients.`,
+      `"${n}, before we start looking at homes — and I know that's the fun part — I want to make sure you're set up to WIN when we find the one you love. I already called my lender — [name] — and told them about you. They are expecting your call and I asked them to take great care of you. In this market, sellers won't even look at an offer without a pre-approval letter. I don't want you to fall in love with a house and not be able to move on it. [Lender name] will make it easy. And if you have any questions during the process, call me — I'll help move things along."`
     );
   } else if (state.preApproved === 'started') {
     html += actionItem(
-      `Follow up on the pre-approval progress and offer to help`,
-      `They've started — which is great. Make sure it's moving forward and they feel supported.`,
-      `"${n}, how's the pre-approval process going? I know paperwork isn't exactly anyone's idea of fun. If you're stuck on anything or the lender needs something, let me know — sometimes I can help move things along. I want to make sure we're ready to jump when we find your home."`
+      `Follow up on pre-approval progress — then call the lender yourself to check`,
+      `They have started the process — which is great. But "started" can mean the paperwork is sitting on a desk somewhere. Check in with ${n}, and then call the lender yourself to make sure things are actually moving. This behind-the-scenes work is invisible to the buyer, and that is exactly what makes it powerful. When you say "I checked with the lender and we are on track," ${n} feels like they have a team working for them.`,
+      `"${n}, how's the pre-approval process going? I know paperwork isn't anyone's idea of fun. If you're stuck on anything or the lender needs something, let me know — sometimes I can help move things along. I actually already checked in with [lender name] and they said [status]. We're in good shape. I want to make sure we're locked and loaded when we find your home."`
     );
   } else {
     html += actionItem(
-      `Confirm pre-approval details and set expectations`,
-      `Even fully pre-approved buyers need to understand what their approval means in practical terms.`,
-      `"${n}, great news that you're already pre-approved — that puts you in a strong position. Let's go over a couple of things: your approved amount, what your monthly payment looks like at different price points, and your comfort zone. Sometimes what the bank says you CAN borrow and what you WANT to borrow are two different numbers — and I want to make sure we're shopping in your comfort zone."`
+      `Confirm pre-approval details and have the honest comfort-zone conversation`,
+      `Even fully pre-approved buyers need to understand the difference between what the bank says they CAN borrow and what they actually WANT to spend each month. Most agents skip this because they want to shop at the top of the budget. You are going to have the conversation nobody else has.`,
+      `"${n}, great news that you're already pre-approved — that puts you in a strong position. Let's talk about something important that most agents don't bring up. Your approved amount is one number. But your comfort zone — what you actually want to write a check for every month — might be a different number. I want to make sure we're shopping where you'll sleep well at night, not just where the bank says you can go. What monthly payment feels good to you?"`
     );
   }
 
   // Decisiveness
   if (state.decisiveness === 'indecisive') {
     html += actionItem(
-      `Help ${n} narrow down what they want — without making them feel rushed`,
-      `Overwhelmed buyers don't need more options. They need clarity. Your job is to be the guide, not just the door-opener.`,
-      `"${n}, I know there are a million options out there and it can feel overwhelming. Let's simplify this. Forget about the house for a second — tell me about your ideal MORNING. Where do you wake up? What's outside the window? How far is your commute? ... Now tell me about your ideal EVENING. Are you on a porch? In a neighborhood where kids are playing? Near restaurants? Great — THAT's how we find your home. Not from a checklist, but from how you want to live."`
+      `Help ${n} find clarity with the "Ideal Morning" exercise — then type it up as their compass`,
+      `Overwhelmed buyers do not need more options. They need a compass. The "describe your ideal morning" conversation cuts through every checklist and Zillow filter. But here is the step almost nobody takes: after they describe it, TYPE IT UP in one paragraph and send it to them. "Here is what you told me your dream looks like. I'm going to use this as our compass." Now there is a document they can refer back to when they are overwhelmed with options. When they are torn between two houses, you pull it out and say "Which one is closer to this?" Decision made.`,
+      `"${n}, I know there are a million options out there and it can feel overwhelming. Let's simplify this. Forget about the house for a second — tell me about your ideal MORNING. Where do you wake up? What's outside the window? How far is your commute? ... Now tell me about your ideal EVENING. Are you on a porch? In a neighborhood where kids are playing? Near restaurants? Great — THAT's how we find your home. Not from a checklist, but from how you want to live. I'm going to type this up and send it to you — it's going to be our compass for the whole search."`
     );
   } else if (state.decisiveness === 'somewhat') {
     html += actionItem(
       `Create a "Must-Have vs. Nice-to-Have" framework`,
-      `Help them organize their thoughts so house-hunting doesn't become an emotional rollercoaster.`,
-      `"${n}, let's do something that'll save us both a lot of time and stress. I want you to think of your top 3 absolute MUST-HAVES — the things you won't compromise on. Then your top 3 NICE-TO-HAVES — the things you'd love but could live without. This gives us a filter for every home we see. Instead of 'I don't know, I kind of liked it?' we can say 'Did it hit all three must-haves?'"`
+      `Help them organize their thoughts so house-hunting does not become an emotional rollercoaster. The magic of this framework is not just the list — it is what happens AFTER each showing. Instead of "I don't know, I kind of liked it?" you can say "Did it hit all three must-haves?" That single question replaces an hour of agonizing.`,
+      `"${n}, let's do something that'll save us both a lot of time and stress. I want you to think of your top 3 absolute MUST-HAVES — the things you won't compromise on. Then your top 3 NICE-TO-HAVES — the things you'd love but could live without. This gives us a filter for every home we see. After each showing, we'll check it against the list. If it hits all three must-haves, it stays on the table. If it doesn't, we move on. No second-guessing."`
     );
   } else {
     html += actionItem(
       `Validate their clarity and prepare a focused search strategy`,
-      `Decisive buyers are a gift. Match their energy with a tight, efficient search plan.`,
+      `Decisive buyers are a gift. Match their energy with a tight, efficient search plan. These buyers do not need hand-holding — they need an agent who can move as fast as they can think.`,
       `"${n}, I love that you know exactly what you're looking for — it's going to make this process so much smoother. Here's what I've set up: I've got a custom search running with your exact criteria, and I'll be previewing homes before I send them to you so I'm not wasting your time. When the right one hits, we'll be ready to move fast."`
     );
   }
@@ -1860,29 +1849,30 @@ function generateBuyerPlan(n) {
   // First-time buyer
   if (has('first-time')) {
     html += actionItem(
-      `Walk them through the entire process in plain English`,
-      `First-timers are nervous because they don't know what they don't know. Remove the mystery and you remove the anxiety.`,
-      `"${n}, I know this is your first time doing this, and I want you to feel completely confident every step of the way. So here's what the whole thing looks like, start to finish — in plain English, no real estate jargon: Step 1, we find a home you love. Step 2, we write an offer. Step 3, if they accept, we do an inspection to make sure everything's in good shape. Step 4, the lender does their thing. Step 5, we close, and you get the keys. That's it. Every step of the way, I'm right there next to you explaining what's happening and why."`
+      `Ask: "Who told you you were ready to buy a home?" — this reveals who influences them`,
+      `First-timers are nervous because they do not know what they do not know. Walk them through the process in plain English — no jargon, no intimidation. But also ask this one question that almost no agent thinks to ask: "Who told you you were ready to buy a home?" The answer reveals who influences them. Parents? A friend who just bought? Social media? That person is either your ally or your obstacle. If Mom is going to second-guess every house, you need to know that now. If their best friend just bought and is coaching them through it, align with that friend's energy. Know who is in their ear.`,
+      `"${n}, I know this is your first time doing this, and I want you to feel completely confident every step of the way. Quick question — who told you you were ready to buy? Was it something you've been thinking about for a while, or did someone in your life give you that nudge? ... [Listen carefully — this tells you who influences their decisions.] Now let me walk you through the whole process, start to finish, in plain English. No jargon. Step 1, we find a home you love. Step 2, we write an offer. Step 3, inspection. Step 4, the lender does their thing. Step 5, you get the keys. I'm right next to you the entire time."`
     );
   }
 
   // Welcome gesture
   html += actionItem(
-    `Send a "Welcome to the Journey" package`,
+    `Send a VOICE MEMO — not a text, not an email — a voice memo`,
     has('first-time') ?
-      `For first-time buyers, make this feel monumental — because it IS. A simple folder with a step-by-step guide, your business card, and a handwritten note: "This is going to be one of the best adventures of your life. I'm honored to be part of it."` :
+      `For first-time buyers, a voice memo is personal in a way text never is. Record a 30-second message on your phone and send it. Your voice conveys excitement, warmth, and commitment that words on a screen cannot. This takes 30 seconds and costs nothing, but ${n} will play it for their friends and family. "Listen to what my agent sent me." Nobody does this. That is exactly why it works.` :
       has('military') ?
-        `Include a thank-you for their service and information about VA loan benefits. Note: "Thank you for your service. I'm going to make sure this process is as smooth as possible — you've dealt with enough paperwork in your life."` :
+        `Military families have dealt with enough impersonal paperwork and form letters. A voice memo cuts through all of that. Record a genuine, warm message thanking them for their service and telling them you are excited to help them find their home. It takes 30 seconds and it will mean more than any folder or welcome package.` :
         has('growing-family') ?
-          `Include a fun kids' activity book about "moving to a new house" and a note for the parents: "We're not just finding a house — we're finding your family's home."` :
-          `Send a personalized welcome card or text: "${n}, I'm excited to help you find your next home. I want you to know — I take this personally. Your goals are my goals until we get you where you want to be."`
+          `A voice memo is personal in a way that text never is. Parents are juggling a thousand things — a warm voice in their ear saying "I'm excited to help your family find your home" lands differently than another notification on their phone. Record it while driving — it should sound natural, not rehearsed. 30 seconds. Done.` :
+          `A voice memo is personal in a way that text and email will never be. Your voice conveys warmth and commitment that words on a screen cannot. This takes 30 seconds, costs nothing, and ${n} will remember it. Nobody does this — which is exactly why it works.`,
+    `Record a voice memo on your phone and text it: "Hey ${n}, I just wanted to say — I'm really excited to work with you. I've already started looking at some listings and I think we're going to find something great. I just want you to know, I take this personally. Your goals are my goals until we get you home. Talk soon."`
   );
 
   if (has('relocating')) {
     html += actionItem(
-      `Create a neighborhood guide for ${n}'s top areas`,
-      `Relocators don't know the area. Be their local insider — not just their agent.`,
-      `"${n}, I put together a little neighborhood guide for you — it covers the top areas based on what you've told me about your commute and lifestyle. I included the stuff Google won't tell you: where the locals eat, which streets have the best trick-or-treating, where the dog parks are. Take a look and let me know what resonates."`
+      `Make a 3-minute VIDEO driving through the top neighborhoods and send it via text`,
+      `Relocators are making a life decision about a place they have never lived. A neighborhood guide document is helpful. A 3-minute video of you casually driving through the top 2-3 neighborhoods, narrating what you see, is EXTRAORDINARY. Nobody does this. "This is the neighborhood I'd live in if I had your commute... here's the coffee shop everyone goes to... this is the school your kids would go to..." Send it via text, not email. It should feel like a friend showing you around, not a realtor giving a pitch. This takes 15 minutes and will make ${n} feel like they already have a local friend before they even move.`,
+      `"${n}, I did something a little extra for you. I drove through the top neighborhoods I think you'd love and recorded a quick video tour. Nothing fancy — just me driving around and showing you what these areas actually look and feel like. The stuff Google Street View can't tell you. I'm texting it to you now. Watch it when you have a few minutes and tell me which areas feel right. We'll start there."`
     );
   }
 
@@ -1891,47 +1881,49 @@ function generateBuyerPlan(n) {
 
   html += actionItem(
     `Set a communication rhythm for the search phase`,
-    `Active searching can feel all-consuming. Give them a predictable rhythm so they don't feel like they're floating.`,
-    `"${n}, here's how we'll stay in sync during the search: [every morning / every Tuesday and Friday — based on their preference], I'll send you any new listings that match. When you see one you want to tour, just text me and I'll get us in. Between showings, I'll check in [based on their communication preference] to see how you're feeling about the search."`
+    `Active searching can feel all-consuming. Give ${n} a predictable rhythm so they do not feel like they are floating in the unknown.`,
+    `"${n}, here's how we'll stay in sync during the search: [every morning / every Tuesday and Friday — based on their preference], I'll send you any new listings that match. When you see one you want to tour, just text me and I'll get us in. Between showings, I'll check in [based on their communication preference] to see how you're feeling about the search. You will always know what's happening."`
   );
 
   html += actionItem(
-    `Before every showing, do your homework`,
-    `Don't just unlock the door. Be the expert. Know the neighborhood, the school zone, the commute time, the HOA, the recent sales nearby.`,
-    `Walk into every showing ready to say: "Here's what I found out about this one..." This preparation shows ${n} that you're working for them even when they can't see it.`
+    `Before every showing, drive by at 3:30pm on a school day and see what the neighborhood is really like`,
+    `Do not just unlock the door and walk in. Be the agent who has already done invisible homework. For buyers with families, drive by the house at school pickup time — 3:30pm on a weekday — and see what the neighborhood looks like when real life is happening. Are there kids playing? Is it quiet? Are the yards maintained? Text ${n}: "I drove by at school pickup time — kids were riding bikes in the cul-de-sac. Thought you'd want to know." This is NEXT LEVEL reconnaissance that takes 5 minutes. For all buyers, know the neighborhood, the commute time, the HOA, the recent sales. Walk into every showing ready to say "Here's what I found out about this one..."`,
+    `Walk into every showing ready to say: "Here's what I found out about this one — the neighbors have been here 15 years, the HOA is reasonable and well-managed, and the commute to your office is 22 minutes in morning traffic. I drove by yesterday afternoon and the neighborhood felt great." This preparation shows ${n} that you're working for them even when they can't see it.`
   );
 
   if (has('growing-family')) {
     html += actionItem(
-      `For every showing, check the kid-friendly details before they even ask`,
-      `Parents are thinking about 100 things at once. If you're thinking about their kids, they'll notice — and they'll never forget it.`,
-      `Before each showing, text: "${n}, I drove by the house this morning. The yard is fenced, there's a playground 2 blocks away, and the elementary school is a 5-minute drive. Oh, and the neighborhood has a cul-de-sac where I saw kids riding bikes. Thought you'd want to know."`
+      `For every showing, scout the kid-friendly details BEFORE the parents even think to ask`,
+      `Parents are evaluating every home through a lens of safety, convenience, and "will my kids be happy here?" If you are thinking about their children before they ask, they will notice — and they will never forget it. Check the yard, the neighborhood, the proximity to schools and playgrounds. Drive by at 3:30pm when kids are coming home from school.`,
+      `Before each showing, text: "${n}, I drove by this one at school pickup time — kids were riding bikes in the cul-de-sac and it felt really safe. The yard is fenced, there's a playground 2 blocks away, and the elementary school is a 5-minute drive. Thought you'd want to know before we go in."`
     );
   }
 
   if (has('pets')) {
     html += actionItem(
       `Scout pet-friendly features at every showing`,
-      `Pet owners are silently evaluating every home through their pet's eyes. Be the agent who does it OUT LOUD.`,
-      `Text before or during showings: "${n}, this one has a great fenced backyard — I think [pet name, if you know it] would love the space. The floors are also pet-friendly (no white carpet!). AND there's a dog park about a half mile down the road."`
+      `Pet owners are silently evaluating every home through their pet's eyes. Be the agent who does it OUT LOUD. Fenced yard? Hardwood floors? Nearby dog park? Cat-friendly window ledges? Say it before they notice it.`,
+      `Text before or during showings: "${n}, this one has a great fenced backyard — I think [pet name] would love the space. The floors are pet-friendly, no white carpet situation. AND there's a dog park about a half mile down the road. I checked."`
     );
   }
 
   html += actionItem(
-    `When they lose a home they love — and they will — handle it like a pro`,
-    `Losing a home in a competitive market is heartbreaking. This is your moment to show who you really are.`,
-    `Call — don't text — and say: "${n}, I'm so sorry. I know you loved that one, and I'm not going to pretend this doesn't sting. It does. But here's what I know: the right home for you is out there, and when we find it, everything about this journey will make sense. For now, I just want you to know I'm disappointed too — and I'm not stopping until we find your home."`
+    `When they lose a home — wait 24 hours before sending new listings`,
+    `Losing a home in a competitive market is heartbreaking. Call, do not text. Let them grieve. Most agents immediately flood buyers with new listings to "keep their spirits up." That is tone-deaf. It tells the buyer you do not understand what they just lost. Instead, let them be sad for 24 hours. Then on day 2, send ONE listing — just one — that is better than what they lost. With the note: "I found this one and immediately thought of you. No rush — just wanted it on your radar when you're ready." One perfect listing says more than ten mediocre ones.`,
+    `Call — don't text: "${n}, I'm so sorry. I know you loved that one, and I'm not going to pretend this doesn't sting. It does. Take tonight and just feel whatever you feel — you don't have to look at anything new right now. I'm disappointed too. But here's what I know: the right home for you is still out there, and when we find it, everything about this journey is going to make sense." Then the NEXT DAY, send one listing: "I found this one and immediately thought of you. No rush — just wanted it on your radar when you're ready."`
   );
 
   html += actionItem(
-    `Mid-search thoughtful gesture`,
+    `If the search drags on, give them PERMISSION to stop looking for a weekend`,
     has('growing-family') ?
-      `Drop off a small pizza or treat for the family with a note: "House hunting with kids is an Olympic sport. You're crushing it. — [Your name]"` :
+      `When a family is weeks into searching and getting discouraged, the most powerful thing you can do is counterintuitive: tell them to stop. "Take this weekend off. Don't look at Zillow. Don't check the MLS. Just be a family." Giving them permission to stop is more powerful than any pizza delivery. When they come back Monday, they will have fresh eyes and the right house will feel obvious.` :
       has('investor') ?
-        `Send a market analysis or a comp report on a neighborhood they're eyeing — show them you're analytical, not just enthusiastic.` :
+        `If the search is not yielding the right numbers, send a market analysis for an area they have not considered. Show them you are thinking analytically about their investment, not just throwing listings at the wall.` :
         has('relocating') ?
-          `Send a "local favorites" care package — local coffee, a list of your favorite restaurants, a welcome-to-the-area gesture that says "I already consider you a neighbor."` :
-          `Send a handwritten card: "${n}, I know the search can be a rollercoaster. I just want you to know — I'm in this with you until we find the one. Don't lose heart."`
+          `When a relocator is weeks into searching from afar and getting frustrated, the distance makes everything harder. Send them something that makes the new city feel like home ALREADY — a voice memo about a neighborhood event happening this weekend, a photo of a sunset from one of the areas they like. Connect them to the place emotionally, not just logistically.` :
+          `When the search drags on and ${n} is getting discouraged, say something counterintuitive: "I want you to take this weekend OFF from house hunting. Don't look at Zillow, don't check the MLS updates I send. Just live your life. When we come back Monday, we'll have fresh eyes and the right house will feel obvious." Giving them PERMISSION to stop searching is more powerful than any gift you could send.`,
+    has('growing-family') || has('investor') || has('relocating') ? undefined :
+    `"${n}, I can see this search is wearing on you, and I want you to know — that's completely normal. Here's what I want you to do: take this weekend off. Seriously. Don't look at Zillow. Don't check the MLS alerts. Just live your life. When we come back Monday, we'll have fresh eyes. The right house will feel obvious. I'm not going anywhere — I'll be here when you're ready."`
   );
 
   // Phase 3
@@ -1939,28 +1931,34 @@ function generateBuyerPlan(n) {
 
   if (has('first-time') || state.bigTransition === 'yes') {
     html += actionItem(
-      `Inspection week: Keep them calm with proactive communication`,
-      `First-time buyers especially panic over inspection reports. Get ahead of it.`,
-      `"${n}, the inspection is on [date]. Here's what I want you to expect: the inspector will find things. Every home has issues — even brand new ones. Their job is to find everything, even tiny stuff. So when you see a long report, don't panic. I'll go through every item with you and we'll separate the real issues from the cosmetic stuff. OK?"`
+      `Walk the property BEFORE the inspection and note what you think will come up`,
+      `First-time buyers panic over inspection reports. Get way ahead of it. Walk the property yourself before inspection day and note anything you think will show up. Then when the report comes in, you can say: "I spotted 3 of these items when I walked the property last week." This positions you as the expert who is already ten steps ahead — not a middleman forwarding a PDF. It also calms the buyer down because they can see you are not surprised, which means nothing is that bad.`,
+      `"${n}, the inspection is on [date]. Here's what I want you to know: I already walked the property and made my own notes. The inspector will find things — every home has them, even brand new ones. Their job is to find everything. So when you see a long report, don't panic. I'll go through every item with you. And I'll be honest — I already spotted a few things I expect to see on the report, so I'm prepared with a strategy for how to handle them."`
     );
   } else {
     html += actionItem(
-      `Guide them through the inspection with confidence`,
-      `Even experienced buyers get nervous during inspection. Be the calm in the storm.`,
-      `"${n}, inspection report is in. Let me walk you through it. I've already flagged the items that actually matter vs. routine maintenance stuff. Here's my recommendation on what to address with the seller..."`
+      `Walk the property before inspection and arrive with your own notes`,
+      `Even experienced buyers get nervous during inspection. Walk the home yourself beforehand and note anything you expect to show up. When the report arrives, this preparation lets you say "I saw this coming — here's what matters and here's what doesn't." Confidence is contagious. When you are calm and prepared, ${n} will be too.`,
+      `"${n}, inspection report is in. I walked the property myself before the inspection and spotted a few of these items already. Let me walk you through the report — I've separated the things that actually matter from the routine maintenance stuff. Here's my recommendation on what to address with the seller and what to let go..."`
     );
   }
 
   html += actionItem(
+    `Introduce yourself to a neighbor before closing — then tell ${n} about it`,
+    `This is extraordinary and it takes 3 minutes. Before closing, knock on one neighbor's door. "My client is about to move in next door. They're wonderful people. I just wanted to introduce myself and let you know." Then tell ${n}: "I met your next-door neighbor today — [name], seems really nice. They're looking forward to having you." This makes ${n} feel like they already BELONG before they have even moved in. They go from "I'm buying a house" to "I'm joining a neighborhood." Almost no agent in the country does this.`,
+    `Knock on the neighbor's door: "Hi, I'm [your name] — I'm a real estate agent and my client is about to move in next door. They're wonderful people and I just wanted to say hello." Then text ${n}: "Hey, I did something a little extra — I stopped by and met your next-door neighbor today. Their name is [name] and they seem really great. They said they're looking forward to having you. You've already got a friend on the street."`
+  );
+
+  html += actionItem(
     `Send regular updates during the under-contract phase`,
-    `The weeks between going under contract and closing can feel like limbo. Don't let ${n} sit in silence.`,
-    `Send weekly updates: "Hey ${n}, quick update on where we are: [appraisal scheduled / title work in progress / lender processing]. Everything is moving along. Next milestone: [date and what happens]. You don't need to do anything right now — just sit tight and I'll let you know if I need anything."`
+    `The weeks between going under contract and closing feel like limbo. Do not let ${n} sit in silence wondering what is happening.`,
+    `Send weekly updates: "Hey ${n}, quick update: [appraisal scheduled / title work in progress / lender processing]. Everything is moving along. Next milestone: [date and what happens]. You don't need to do anything right now — just sit tight and I'll let you know if I need anything from you."`
   );
 
   if (has('military')) {
     html += actionItem(
       `Connect ${n} with VA-familiar vendors and check in about PCS timeline stress`,
-      `Military moves have unique pressures — hard deadlines, uncertainty, bureaucracy. Show that you understand.`,
+      `Military moves have unique pressures — hard deadlines, uncertainty, bureaucracy. Show that you understand their world, not just the transaction.`,
       `"${n}, I want to make sure all our vendors — the lender, the inspector, the appraiser — are experienced with VA transactions. I've got my A-team lined up. Also, how's the PCS timeline looking? Any changes on your end? I want to make sure our closing date works perfectly with your report date."`
     );
   }
@@ -1971,7 +1969,7 @@ function generateBuyerPlan(n) {
       `Mail a card: "You're almost a homeowner. I want you to take a second and let that sink in. You did this. I'm so proud of you."` :
       has('relocating') ?
         `Send a "Welcome to [City]" gift — a local guidebook, a restaurant gift card, something that says "you belong here already."` :
-        `Send a quick voice memo or card: "${n}, just thinking about you. We're in the home stretch. Can't wait to hand you those keys."`
+        `Send a quick voice memo: "${n}, just thinking about you. We're in the home stretch. Can't wait to hand you those keys."`
   );
 
   // Phase 4
@@ -1980,9 +1978,9 @@ function generateBuyerPlan(n) {
   // Closing day gesture
   if (has('first-time')) {
     html += actionItem(
-      `Make closing day unforgettable for this first-time buyer`,
-      `This is one of the biggest days of their life. Treat it that way.`,
-      `Bring a "First Home" gift bag: a new welcome mat, a bottle of champagne (or sparkling cider), and a framed photo of the house. Include a handwritten card: "${n}, you are officially a homeowner. I'm so proud of you. Welcome home." Take a photo of them with the keys — offer to help them post it on social media if they're excited about it.`
+      `Write a handwritten LETTER about their journey — not a card, a letter`,
+      `This is one of the biggest days of their life. Do not hand them a gift bag — hand them a letter. A one-page, handwritten letter that says specific things about THEIR journey. "I remember when you almost gave up after losing the house on Oak Street. I remember how nervous you were at the inspection. And I remember the look on your face when you first walked into this house. You earned this." A letter like this costs nothing. It takes 15 minutes to write. And they will keep it forever — in a drawer, in a frame, in a box of things that matter. No welcome mat or champagne bottle will ever come close.`,
+      `Write a handwritten letter (not a card — a full letter on nice paper): "Dear ${n}, I want to take a minute and tell you something. I remember our first conversation when you told me you weren't sure you were ready for this. I remember [specific moment from the search]. I remember [specific moment — losing a house, being nervous, etc.]. And I remember the look on your face when you walked into this house for the first time. You earned this. Every bit of it. Welcome home. I'm so proud of you."`
     );
   } else if (has('investor')) {
     html += actionItem(
@@ -1992,59 +1990,59 @@ function generateBuyerPlan(n) {
     );
   } else if (has('growing-family')) {
     html += actionItem(
-      `Make closing day a family celebration`,
-      `The whole family is moving in. Make it feel like a celebration for everyone.`,
-      `Bring a welcome basket for the whole family: snacks, juice boxes for the kids, a roll of paper towels and cleaning spray for the practical side, a gift card for pizza delivery (because nobody cooks on move-in day), and a stuffed animal or coloring book for each kid. Card: "Welcome to your new home, [family name]! The adventure starts NOW."`
+      `Make closing day about the WHOLE family — especially the kids`,
+      `The whole family is moving in. Make it feel like everyone matters, not just the adults signing papers. Think about what the kids told you, what they are excited about. Reference them by name. Let the kids feel like this is their day too.`,
+      `Bring something specific for each kid based on what you learned — not a generic coloring book, but something that shows you listened. If the daughter is excited about having her own room, bring a small "this room belongs to [name]" door sign. For the parents, leave a handwritten note: "Your family made every showing feel like an adventure. This home is lucky to have you. Welcome home, [family name]."`
     );
   } else {
     html += actionItem(
-      `Personalized closing day gift`,
-      `Not a generic cutting board. Something that shows you listened and remembered.`,
+      `The closing gift should make them cry, not smile — prove you were listening`,
+      `Not a cutting board. Not a gift card. Something that proves you were listening to something ${n} said in PASSING — not something obvious. If they mentioned wanting to start cooking more, find a cookbook from a local chef. If they talked about their grandmother, find something that honors that memory. If they said they cannot wait to sit on the porch with their morning coffee, leave a bag of local roasted coffee on the porch with a note. The less it costs and the more personal it is, the more powerful it becomes.`,
       has('pets') ?
-        `Bring a new pet bed or toy along with a personalized tag that says "[pet name]'s new home." Plus a small gift for ${n} tied to what you learned about them.` :
+        `Think about what ${n} told you about their pet and their life. If they mentioned [pet name] loves the backyard, leave a new toy on the back porch with a tag: "For [pet name] — enjoy your new yard." For ${n}, something tied to a specific conversation you had. The personal detail is what makes it unforgettable.` :
         has('retiring') ?
-          `A gift card to their favorite restaurant, a bottle of wine, and a card: "This is the beginning of the best chapter yet. Enjoy every minute."` :
-          `Something tied to what you learned in your discovery conversation. If they love to cook — a local cookbook. If they love gardening — a potted plant for the new porch. The specificity is what makes it unforgettable.`
+          `Remember what they told you about their next chapter. If they mentioned traveling, a travel journal. If they mentioned gardening, a potted plant for the new porch. Add a handwritten note: "This is the beginning of the chapter you've been waiting for. You deserve every bit of it."` :
+          `Something tied to what you heard during your time together. If they love to cook — a local cookbook with a note referencing the conversation. If they mentioned a dream or a goal for this house — honor it with a small gesture that proves you heard them. The specificity is what makes it unforgettable.`
     );
   }
 
   html += actionItem(
-    `The 48-hour post-closing call`,
-    `This is the most important call in your entire relationship. The agent who checks in after closing is the agent who gets referrals forever.`,
-    `"${n}, how was your first night in the new place? ... That's amazing. Listen, I just want you to know — working with you was a highlight for me. If ANYTHING comes up — a question about the house, a recommendation for a plumber, whatever — I'm just a call away. You're not a transaction to me. You're someone I care about. OK?"`
+    `The 48-hour call: say something SPECIFIC — "Did you sleep well in your new house last night?"`,
+    `Do not call and say "how are you doing?" That is generic. Instead, ask something that proves they are a real person to you, not a closed file. "Did you sleep well in your new house last night?" or "What was the first thing you did when everyone left?" Something specific. Something human. The difference between a forgettable check-in and an unforgettable one is specificity.`,
+    `"${n}, I have to ask — did you sleep well in your new house last night? ... [Listen. React genuinely.] I love that. Working with you was genuinely one of my favorite experiences. I mean that. If ANYTHING comes up — a question about the house, a recommendation for a plumber, even if you just want to tell me about your first dinner there — I'm always just a call away."`
   );
 
   html += actionItem(
-    `Move-in surprise (low-cost but thoughtful)`,
+    `Move-in surprise: a handwritten note on the counter with a $20 bill taped to it`,
     has('growing-family') ?
-      `Drop off a "First Night Kit": paper plates, cups, napkins, toilet paper, paper towels, hand soap, a box of cookies, and a note: "Because unpacking the kitchen on night one is for people who haven't been house-hunting with two kids. Eat the cookies first."` :
+      `Leave a note on the kitchen counter with a $20 bill taped to it: "First pizza delivery in your new home is on me. Nobody unpacks the kitchen on night one — especially with kids. Welcome home, [family name]." Simple. Memorable. Nobody does it. The kids will remember "the pizza lady/man" for years.` :
       has('pets') ?
-        `Leave a small bag of treats and a toy on the porch with a note: "Welcome home, [pet's name]! Your humans did a great job picking this place."` :
-        `A local coffee shop gift card taped to the door with a note: "First morning coffee in your new home is on me. Welcome home, ${n}."`
+        `Leave a note on the kitchen counter with a $20 bill: "First pizza delivery in your new home is on me. And for [pet name] —" with a small treat or toy next to it. Simple. Memorable. Nobody does it.` :
+        `Leave a handwritten note on the kitchen counter with a $20 bill taped to it: "First pizza delivery in your new home is on me. Welcome home, ${n}." That is it. Simple. Memorable. Costs twenty dollars. Nobody does it. It will be the thing they tell their friends about.`
   );
 
   html += actionItem(
-    `30-day check-in`,
-    `This is about connection, not business.`,
-    `"Hey ${n}! It's been a month — how's the new place? Getting settled in? I was driving by the other day and it made me smile. Let me know if you need anything!"`
+    `30-day check-in: Be USEFUL — send a vetted list of local service providers`,
+    `Do not text "just checking in." Be genuinely useful. Think about what ${n} needs as a new homeowner. A good plumber. An honest electrician. A reliable handyman. A house cleaner. Send them a curated list of people YOU trust — not a generic Google list, YOUR people. When you are useful with no agenda, you become indispensable.`,
+    `"Hey ${n}! Hope you're settling in great. I put together something for you — my personal list of vetted local service providers. Plumber, electrician, HVAC, handyman, house cleaner. These are the people I use and trust. If you ever need anyone, just text me — I've probably got a person. Consider me your real estate concierge for life."`
   );
 
   html += actionItem(
-    `60-day check-in with a thoughtful touch`,
-    `Send a handwritten card or a small seasonal gift. The goal is to stay in their world without being sales-y.`,
-    `"${n}, just wanted to drop a quick note. I hope you're loving the new place. I put together a list of my favorite local service providers — plumber, electrician, landscaper, house cleaner — so you have it when you need it. Consider me your real estate concierge for life!"`
+    `60-day check-in: A HANDWRITTEN note referencing something personal from your journey together`,
+    `Not a text. Not an email. A handwritten card mailed to their home. Reference something specific — an inside joke, a stressful moment you got through together, a funny memory from a showing. Handwritten notes are so rare now that receiving one feels like a gift. This is the touch that keeps you in their heart, not just their phone.`,
+    `Mail a handwritten card: "${n}, I was [thinking about something specific — a funny moment during the search, a house you both laughed about, a memory from the journey]. Hope you're loving the new place. I still smile when I think about our time working together. If you ever need anything at all — you know where to find me."`
   );
 
   html += actionItem(
-    `90-day check-in: The natural referral moment`,
-    `By now, you've been consistently present for 3 months AFTER the sale. The referral ask will feel natural — because you've earned it.`,
-    `"${n}, I can't believe it's been 3 months! How's everything? ... I'm so glad. Listen — I want you to know, if you ever have anyone in your life who's thinking about buying or selling, I'd love to take care of them the same way I took care of you. No pressure whatsoever. I just love what I do, and the best compliment I can ever receive is a referral from someone I care about."`
+    `90-day check-in: Plant the seed naturally — don't ask, just mention`,
+    `Do NOT ask for referrals at 90 days. Instead, mention that you just helped someone else — it plants the seed without any pressure. "I just helped another family find a home near you" makes them think about who THEY know. It signals you are active and successful. It creates the connection between "people I care about who need a home" and "my agent" without making them feel like they owe you something.`,
+    `"Hey ${n}, I just helped another family find a home in your area — made me think of you! How's everything going? Hope you're making a million memories in that house. It still makes me happy that we found the right one."`
   );
 
   html += actionItem(
-    `Set a calendar reminder for their home anniversary`,
-    `One year from now, a text, card, or small gift. This is the long game.`,
-    `"${n}! Happy home-iversary! Can you believe it's been a year? I hope you've made a million memories already. If you ever need anything — or just want to know what your home's worth these days — I'm always here. Cheers to year two!"`
+    `Anniversary: Send their home's current estimated value — useful AND unforgettable`,
+    `Forget "happy home-iversary." Instead, send ${n} their home's estimated current value with context. This gives them genuinely useful financial information AND positions you as the market expert they should call when anyone they know is thinking about real estate. It is the perfect blend of valuable and memorable.`,
+    `"${n}, can you believe it's been a year? I was looking at market data and wanted you to know — your home has appreciated approximately $[X] since you bought it. Your investment is growing and you should feel great about that. If you ever want a full market update, or if anyone you know is curious about what their home is worth, I'm always happy to run the numbers. Cheers to year two!"`
   );
 
   return html;
@@ -2056,53 +2054,59 @@ function generateReferralSection(n) {
 
   // Universal referral
   scripts.push({
-    label: 'The Natural Door-Opener',
-    text: `"I just want you to know — if you ever have a friend or coworker who's thinking about making a move, I'd take care of them the same way I took care of you. No pressure at all, just know that door is always open."`
+    label: 'The Moment It Lands',
+    text: `"${n}, the next time someone you know says 'I'm thinking about buying' or 'I'm thinking about selling,' and your name pops into their head — that's the best compliment I could ever receive. You don't have to say anything now. You don't have to do anything. Just know that when that moment comes, I'll take care of them like I took care of you. That's a promise."`
   });
 
   // Situation-specific referrals
   if (has('relocating')) {
     scripts.push({
       label: 'The Relocation Connection',
-      text: `"When your new coworkers start asking about your experience ${state.clientType === 'buyer' ? 'buying' : 'selling'} here — and they will — I'd love to be the person you send them to. I've helped a lot of people navigate relocations and I'd be honored to help anyone you know."`
+      text: `"When your new coworkers start asking about your experience ${state.clientType === 'buyer' ? 'buying' : 'selling'} here — and they will, because everyone asks the new person — I'd love to be the person you send them to. Moving is hard enough without having to find an agent you trust from scratch. If you can save someone that stress, you'll be their hero. And I'll take care of them like family."`
     });
   } else if (has('first-time')) {
     scripts.push({
       label: 'The First-Timer Bond',
-      text: `"I know you probably have friends who are also thinking about ${state.clientType === 'buyer' ? 'buying their first home' : 'selling for the first time'}. If they're nervous about the process like you were at the beginning, I'd love to walk them through it the same way. Sometimes just knowing you have someone in your corner makes all the difference."`
+      text: `"You probably have friends who are thinking about ${state.clientType === 'buyer' ? 'buying their first home' : 'selling for the first time'} and are terrified. Remember how you felt at the very beginning? If you ever meet someone in that spot, just tell them: 'I had an agent who made it feel easy.' That's all you need to say. I'll handle the rest."`
     });
   } else if (has('military')) {
     scripts.push({
       label: 'The Military Community',
-      text: `"If anyone in your unit or at the base is thinking about buying or selling, I'd be honored to help them. I understand the unique challenges of military moves — the timelines, the VA process, all of it. Any service member you send my way, I'll take care of them like family."`
+      text: `"If anyone in your unit or at the base gets orders and needs to buy or sell fast, I want them to know they don't have to figure it out alone. I know the VA process, I know the PCS timelines, and I know how to move fast when the military doesn't wait. Any service member you send my way, I'll take care of them like they're my own family."`
     });
   } else if (has('growing-family')) {
     scripts.push({
       label: 'The Parent Network',
-      text: `"You know how it is — at the school pickup line or the playground, people always end up talking about real estate. If anyone ever mentions they're thinking about a move, I'd love to help them out. Especially families with kids — I know how important it is to find the right neighborhood."`
+      text: `"You know how it is — at pickup line, at the park, at birthday parties — someone always mentions they're outgrowing their house or thinking about moving. If that ever comes up, just say 'I know someone.' That's it. You don't have to sell me or pitch me. Just plant the seed and I'll take it from there."`
     });
   } else if (has('investor')) {
     scripts.push({
       label: 'The Investor Network',
-      text: `"If you know any other investors looking at this market, I'd love to bring the same level of market analysis and efficiency to their search. My investor clients tend to stick with me because I understand the numbers side — not just the emotional side."`
+      text: `"If you know any other investors looking at this market, I'd love to bring the same analytical approach to their search. I know you don't want an agent who gets emotional about the deal — you want someone who runs the numbers and moves fast. That's what I bring to every investor relationship."`
     });
   } else {
     scripts.push({
-      label: 'The Specific Ask',
-      text: `"Can I ask you something? When this is all done and you're settled in — if the experience was great — would you be open to leaving me a quick review online? And if someone in your life ever mentions real estate, just think of me. That's how I build my business — one happy client at a time."`
+      label: 'The Honest Ask',
+      text: `"Can I tell you something? The way I build my business is one person at a time. No billboards, no bus benches. Just people like you telling people like them. If this experience was what I hope it was, the greatest gift you could give me is your trust — in the form of a name, whenever the time is right. No rush. No pressure. I'll be here."`
     });
   }
+
+  // The counterintuitive approach
+  scripts.push({
+    label: 'The Give-First Philosophy',
+    text: `Coach's note: The most powerful referral strategy is counterintuitive — don't ASK for referrals. GIVE them. Send ${n} business. Recommend their restaurant, their services, their expertise to YOUR network. When a past client mentions they need a good [whatever ${n} does], send people their way first. When you give first, referrals come back tenfold. This is a long game, and it works because it's genuine. People refer the person who helps them — not the person who asks them for help.`
+  });
 
   // Long-term play
   scripts.push({
     label: 'The Long Game',
-    text: `"${n}, you don't have to think about referrals right now. But six months from now, when someone at work or at a dinner party mentions they're thinking about ${state.clientType === 'buyer' ? 'buying' : 'selling'}, and you think of me? That's the greatest compliment I could ever receive. It means I did my job right."`
+    text: `"${n}, six months from now, you're going to be at a dinner party or a work event, and someone is going to say 'We're thinking about ${state.clientType === 'buyer' ? 'buying' : 'selling'}.' And in that moment, if my name is the one that comes to mind — that means I did my job right. Not because I asked you for it. Because I earned it."`
   });
 
   let html = `
     <div class="referral-section">
       <h3>The Referral Moment</h3>
-      <p class="referral-intro">These aren't cheesy sales scripts. They're genuine, relationship-first ways to let ${n} know you'd welcome referrals — without making it weird. Use the one that fits the moment.</p>`;
+      <p class="referral-intro">These are not sales scripts. They are genuine, relationship-first ways to plant seeds — without making it weird or transactional. The best referral strategy is simple: take care of people so well that they WANT to tell others about you. Use the approach that fits the moment.</p>`;
 
   scripts.forEach(s => {
     html += `
@@ -2259,23 +2263,23 @@ function getQuestionsData() {
 
   questions.push({
     text: `"${n}, how do you prefer to communicate — text, email, or phone calls? And what time of day works best for updates?"`,
-    sub: `<strong>Coach's note:</strong> Then actually DO it their way. Not yours. This alone will set you apart from 90% of agents.`
+    sub: `<strong>Coach's note:</strong> Then actually DO it their way. Not yours. This alone will set you apart from 90% of agents. Write it down. Put it in your phone. If they say "text me, evenings are best" — do not call them at 10am. This is the simplest promise you can make, and breaking it is the fastest way to lose trust.`
   });
 
   questions.push({
     text: `"What does a perfect outcome look like for you — not just the ${state.clientType === 'buyer' ? 'house' : 'sale'}, but how do you want to FEEL when this is all over?"`,
-    sub: `<strong>Coach's note:</strong> This tells you their emotional driver. Every decision they make will trace back to this answer.`
+    sub: `<strong>Coach's note:</strong> This tells you their emotional driver. Every decision they make will trace back to this answer. If they say "relieved," this is a stress-driven transaction — protect them from chaos. If they say "excited," this is a dream-driven transaction — feed that energy. If they say "safe," there is something deeper going on — slow down and let them lead. Write down their exact word. Reference it later: "You told me you wanted to feel [their word]. Are we on track?"`
   });
 
   questions.push({
-    text: `"Is there anything about this process that makes you nervous or that you've heard horror stories about?"`,
-    sub: `<strong>Coach's note:</strong> Now you know their fear. Address it proactively throughout the transaction and they'll never forget you.`
+    text: `"What's the ONE thing that would make you feel like this process went perfectly? Not the outcome — the experience itself."`,
+    sub: `<strong>Coach's note:</strong> This is different from "how do you want to feel" — that question is about the emotional result. This question is about the PROCESS. Maybe they want to feel informed every step of the way. Maybe they want to feel like they were never pressured. Maybe they want to feel like you respected their time. Whatever they say, THAT becomes your north star for how you run this transaction. An agent who delivers a great process AND a great outcome creates a client for life. Ask the question, write down the answer, and deliver on it relentlessly.`
   });
 
   if (has('relocating', 'first-time', 'divorce', 'lost-spouse', 'military') || state.bigTransition === 'yes') {
     questions.push({
       text: `"What does your support system look like right now? Do you have family or friends nearby helping you through this?"`,
-      sub: `<strong>Coach's note:</strong> If the answer is "not really," YOU become that support system.`
+      sub: `<strong>Coach's note:</strong> If the answer is "not really," YOU become that support system. This is not just a nice thing to do — it is strategically critical. A person without support makes decisions from fear, second-guesses everything, and is more likely to get cold feet. When you step into that role, you stabilize the entire transaction. If they DO have support, ask who it is. That person will either help you or fight you — know their name and their influence.`
     });
   }
 
@@ -2283,8 +2287,8 @@ function getQuestionsData() {
     const familyOrPets = has('growing-family') && has('pets') ? 'your family and your pets' :
       has('growing-family') ? 'your family' : 'your pets';
     questions.push({
-      text: `"Tell me about ${familyOrPets} — what's the biggest need in a home that you haven't told me about yet?"`,
-      sub: `<strong>Coach's note:</strong> Parents and pet owners will pick YOU over a cheaper agent every time if you show you care about their kids and animals.`
+      text: `"Tell me about ${familyOrPets} — what's the one thing about your current home that doesn't work for them?"`,
+      sub: `<strong>Coach's note:</strong> This question reveals the PAIN POINT, not just the wish list. "We need more space" is a wish. "My son doesn't have room for his wheelchair to turn around in the hallway" is a pain point. "My dog can't go outside without a leash because there's no fence" is a pain point. Pain points create urgency and clarity. When you find a home that solves the specific pain, you will see it in their eyes — and you will know. Parents and pet owners will choose YOU over a cheaper agent every single time if you show that you see and care about the beings they love most.`
     });
   }
 

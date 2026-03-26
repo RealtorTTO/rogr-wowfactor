@@ -1143,60 +1143,118 @@
 
       <div class="form-group">
         <div class="form-label">
-          What's their life situation?
+          What's going on in their life?
           <span class="hint">Select all that apply</span>
         </div>
-        <div class="checkbox-group" id="situations">
-          <label class="checkbox-item" onclick="toggleCheck(this)">
-            <input type="checkbox" value="relocating">
-            <span class="checkmark"></span>
-            <span class="check-label">Relocating for a job</span>
-          </label>
-          <label class="checkbox-item" onclick="toggleCheck(this)">
-            <input type="checkbox" value="first-time">
-            <span class="checkmark"></span>
-            <span class="check-label">First-time buyer/seller</span>
-          </label>
-          <label class="checkbox-item" onclick="toggleCheck(this)">
-            <input type="checkbox" value="downsizing">
-            <span class="checkmark"></span>
-            <span class="check-label">Downsizing / empty nesters</span>
-          </label>
-          <label class="checkbox-item" onclick="toggleCheck(this)">
-            <input type="checkbox" value="divorce">
-            <span class="checkmark"></span>
-            <span class="check-label">Going through a divorce</span>
-          </label>
-          <label class="checkbox-item" onclick="toggleCheck(this)">
-            <input type="checkbox" value="lost-spouse">
-            <span class="checkmark"></span>
-            <span class="check-label">Recently lost a spouse</span>
-          </label>
-          <label class="checkbox-item" onclick="toggleCheck(this)">
-            <input type="checkbox" value="military">
-            <span class="checkmark"></span>
-            <span class="check-label">Military / veteran</span>
-          </label>
-          <label class="checkbox-item" onclick="toggleCheck(this)">
-            <input type="checkbox" value="growing-family">
-            <span class="checkmark"></span>
-            <span class="check-label">Growing family</span>
-          </label>
-          <label class="checkbox-item" onclick="toggleCheck(this)">
-            <input type="checkbox" value="pets">
-            <span class="checkmark"></span>
-            <span class="check-label">Has pets</span>
-          </label>
-          <label class="checkbox-item" onclick="toggleCheck(this)">
-            <input type="checkbox" value="investor">
-            <span class="checkmark"></span>
-            <span class="check-label">Investor / not emotionally attached</span>
-          </label>
-          <label class="checkbox-item" onclick="toggleCheck(this)">
-            <input type="checkbox" value="retiring">
-            <span class="checkmark"></span>
-            <span class="check-label">Retiring</span>
-          </label>
+        <!-- SELLER life situations -->
+        <div id="sellerSituations" style="display:none">
+          <div class="checkbox-group">
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="relocating">
+              <span class="checkmark"></span>
+              <span class="check-label">Relocating — selling because of a job move</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="first-time">
+              <span class="checkmark"></span>
+              <span class="check-label">First-time seller</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="downsizing">
+              <span class="checkmark"></span>
+              <span class="check-label">Downsizing / empty nesters</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="divorce">
+              <span class="checkmark"></span>
+              <span class="check-label">Going through a divorce</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="lost-spouse">
+              <span class="checkmark"></span>
+              <span class="check-label">Recently lost a spouse</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="military">
+              <span class="checkmark"></span>
+              <span class="check-label">Military / veteran</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="growing-family">
+              <span class="checkmark"></span>
+              <span class="check-label">Growing family — needs more space</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="pets">
+              <span class="checkmark"></span>
+              <span class="check-label">Has pets in the home during showings</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="investor">
+              <span class="checkmark"></span>
+              <span class="check-label">Investment property — not emotionally attached</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="retiring">
+              <span class="checkmark"></span>
+              <span class="check-label">Retiring</span>
+            </label>
+          </div>
+        </div>
+        <!-- BUYER life situations -->
+        <div id="buyerSituations" style="display:none">
+          <div class="checkbox-group">
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="relocating">
+              <span class="checkmark"></span>
+              <span class="check-label">Relocating for a job</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="first-time">
+              <span class="checkmark"></span>
+              <span class="check-label">First-time homebuyer</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="downsizing">
+              <span class="checkmark"></span>
+              <span class="check-label">Downsizing / empty nesters</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="divorce">
+              <span class="checkmark"></span>
+              <span class="check-label">Going through a divorce</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="lost-spouse">
+              <span class="checkmark"></span>
+              <span class="check-label">Recently lost a spouse</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="military">
+              <span class="checkmark"></span>
+              <span class="check-label">Military / veteran</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="growing-family">
+              <span class="checkmark"></span>
+              <span class="check-label">Growing family</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="pets">
+              <span class="checkmark"></span>
+              <span class="check-label">Has pets</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="investor">
+              <span class="checkmark"></span>
+              <span class="check-label">Investor / not emotionally attached</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="retiring">
+              <span class="checkmark"></span>
+              <span class="check-label">Retiring</span>
+            </label>
+          </div>
         </div>
       </div>
     </div>
@@ -1350,6 +1408,11 @@
 
     <div id="referralSection"></div>
 
+    <div id="teresaChallenge" style="background:var(--black);color:var(--gold);text-align:center;padding:40px 32px;border-radius:var(--radius-lg);margin-top:40px;">
+      <div style="font-size:20px;font-weight:700;margin-bottom:16px;letter-spacing:0.5px;">Teresa's Challenge</div>
+      <div style="font-size:15px;line-height:1.7;max-width:600px;margin:0 auto;color:var(--gold);">For the next 30 days, follow this plan to the letter for every active client. Not some of it &mdash; all of it. At the end of 30 days, count how many unsolicited referrals you received. Then you'll understand why this tool exists.</div>
+    </div>
+
     <div class="pdf-section">
       <hr class="gold-divider">
       <p>Save this plan so you can reference it throughout the transaction.</p>
@@ -1446,6 +1509,8 @@ function selectType(type) {
 
   document.getElementById('sellerFields').style.display = type === 'seller' ? 'block' : 'none';
   document.getElementById('buyerFields').style.display = type === 'buyer' ? 'block' : 'none';
+  document.getElementById('sellerSituations').style.display = type === 'seller' ? 'block' : 'none';
+  document.getElementById('buyerSituations').style.display = type === 'buyer' ? 'block' : 'none';
 }
 
 function toggleCheck(el) {
@@ -1483,7 +1548,8 @@ function collectStep1() {
 function collectStep2() {
   state.clientName = document.getElementById('clientName').value.trim();
   state.situations = [];
-  document.querySelectorAll('#situations input[type="checkbox"]').forEach(cb => {
+  const situationsId = state.clientType === 'seller' ? '#sellerSituations' : '#buyerSituations';
+  document.querySelectorAll(situationsId + ' input[type="checkbox"]').forEach(cb => {
     if (cb.checked) state.situations.push(cb.value);
   });
 
@@ -1548,6 +1614,22 @@ function renderQuestions() {
     });
   }
 
+  // Seller-specific discovery question
+  if (state.clientType === 'seller') {
+    questions.push({
+      text: `"Have you already started thinking about where you'll go next — or is that something you still need to figure out?"`,
+      sub: `<strong>Coach's note:</strong> This reveals if they're also buying, which changes your entire timeline strategy. It also uncovers hidden stress — if they don't have a plan for where to go, selling feels much more overwhelming. If they DO have a plan, you can coordinate timelines. Either way, this question shows you're thinking about their whole life, not just the sale.`
+    });
+  }
+
+  // Buyer-specific discovery question
+  if (state.clientType === 'buyer') {
+    questions.push({
+      text: `"Have you been looking online already? What's the one house that got away — the one you loved but didn't move on?"`,
+      sub: `<strong>Coach's note:</strong> This tells you their REAL taste versus their stated criteria. The house they fell in love with online reveals what they actually want — which is often different from what they SAY they want. It also tells you their decision-making speed. Did they hesitate and lose it? Are they impulsive? This answer is pure gold for how you guide the search.`
+    });
+  }
+
   let html = '';
   questions.forEach((q, i) => {
     html += `
@@ -1570,10 +1652,16 @@ function renderWowPlan() {
 
   let html = '';
 
+  // Pro Tip banner
+  html += '<div style="border-left:4px solid var(--gold);background:var(--white);padding:24px 28px;border-radius:0 var(--radius-md) var(--radius-md) 0;margin-bottom:32px;box-shadow:var(--shadow-sm);">';
+  html += '<div style="font-size:16px;font-weight:700;color:var(--gold-dark);margin-bottom:8px;">How to Use This Plan</div>';
+  html += '<div style="font-size:14px;color:var(--text);line-height:1.65;">Print this or keep it on your phone. Reference it at every stage of the transaction — not just once. The agents who follow this plan EXACTLY, every single time, are the ones who stop chasing leads because their past clients do the work for them. This is not a suggestion list. This is your playbook. Treat it like one.</div>';
+  html += '</div>';
+
   if (state.clientType === 'seller') {
-    html = generateSellerPlan(n);
+    html += generateSellerPlan(n);
   } else {
-    html = generateBuyerPlan(n);
+    html += generateBuyerPlan(n);
   }
 
   document.getElementById('wowPlanContent').innerHTML = html;
@@ -2292,6 +2380,22 @@ function getQuestionsData() {
     });
   }
 
+  // Seller-specific discovery question
+  if (state.clientType === 'seller') {
+    questions.push({
+      text: `"Have you already started thinking about where you'll go next — or is that something you still need to figure out?"`,
+      sub: `<strong>Coach's note:</strong> This reveals if they're also buying, which changes your entire timeline strategy. It also uncovers hidden stress — if they don't have a plan for where to go, selling feels much more overwhelming. If they DO have a plan, you can coordinate timelines. Either way, this question shows you're thinking about their whole life, not just the sale.`
+    });
+  }
+
+  // Buyer-specific discovery question
+  if (state.clientType === 'buyer') {
+    questions.push({
+      text: `"Have you been looking online already? What's the one house that got away — the one you loved but didn't move on?"`,
+      sub: `<strong>Coach's note:</strong> This tells you their REAL taste versus their stated criteria. The house they fell in love with online reveals what they actually want — which is often different from what they SAY they want. It also tells you their decision-making speed. Did they hesitate and lose it? Are they impulsive? This answer is pure gold for how you guide the search.`
+    });
+  }
+
   return questions;
 }
 
@@ -2325,6 +2429,8 @@ function startOver() {
   document.querySelectorAll('.yn-btn.selected').forEach(el => el.classList.remove('selected'));
   document.getElementById('sellerFields').style.display = 'none';
   document.getElementById('buyerFields').style.display = 'none';
+  document.getElementById('sellerSituations').style.display = 'none';
+  document.getElementById('buyerSituations').style.display = 'none';
 
   goToStep(1);
 }

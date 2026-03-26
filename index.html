@@ -1608,17 +1608,32 @@ function renderQuestions() {
   if (has('growing-family', 'pets')) {
     const familyOrPets = has('growing-family') && has('pets') ? 'your family and your pets' :
       has('growing-family') ? 'your family' : 'your pets';
-    questions.push({
-      text: `"Tell me about ${familyOrPets} — what's the biggest need in a home that you haven't told me about yet?"`,
-      sub: `<strong>Coach's note:</strong> Parents and pet owners will pick YOU over a cheaper agent every time if you show you care about their kids and animals. The little details — a fenced yard, a quiet street, proximity to a park — matter more to them than granite countertops.`
-    });
+    if (state.clientType === 'buyer') {
+      questions.push({
+        text: `"Tell me about ${familyOrPets} — what's the biggest need in a home that you haven't told me about yet?"`,
+        sub: `<strong>Coach's note:</strong> Parents and pet owners will pick YOU over a cheaper agent every time if you show you care about their kids and animals. The little details — a fenced yard, a quiet street, proximity to a park — matter more to them than granite countertops.`
+      });
+    } else {
+      questions.push({
+        text: `"Tell me about ${familyOrPets} — what do I need to know to make the showing process smooth for everyone at home?"`,
+        sub: `<strong>Coach's note:</strong> For sellers with pets or kids, showings are disruptive to their daily life. Asking this shows you see them as a family, not just a transaction. You will learn where the dog goes during showings, what time the kids nap, whether the cat is an escape artist. These details prevent disasters and make the seller feel respected. The agent who manages showings around real life — not just the MLS schedule — earns trust fast.`
+      });
+    }
   }
 
-  // Seller-specific discovery question
-  if (state.clientType === 'seller') {
+  // Seller-specific discovery question — only if they live there (not vacant/investment)
+  if (state.clientType === 'seller' && state.livingInHome === 'yes' && !has('investor')) {
     questions.push({
       text: `"Have you already started thinking about where you'll go next — or is that something you still need to figure out?"`,
       sub: `<strong>Coach's note:</strong> This reveals if they're also buying, which changes your entire timeline strategy. It also uncovers hidden stress — if they don't have a plan for where to go, selling feels much more overwhelming. If they DO have a plan, you can coordinate timelines. Either way, this question shows you're thinking about their whole life, not just the sale.`
+    });
+  }
+
+  // Seller question for investors/vacant — different angle
+  if (state.clientType === 'seller' && (state.livingInHome !== 'yes' || has('investor'))) {
+    questions.push({
+      text: `"What's your ideal timeline — and is there a hard deadline I should know about, like a tax situation, another purchase, or a life event driving this?"`,
+      sub: `<strong>Coach's note:</strong> Investors and second-home sellers have different urgency. It is rarely emotional — it is financial or strategic. Knowing their deadline tells you whether to price aggressively for a quick sale or hold firm for maximum return. This question also surfaces motivations they might not volunteer — a 1031 exchange window, capital needed for another purchase, or a change in financial strategy.`
     });
   }
 
@@ -1849,25 +1864,39 @@ function generateSellerPlan(n) {
           `Keep it respectful and forward-looking. A simple, handwritten note: "You handled this with more grace than you probably realize. Here's to whatever comes next." Nothing that references the past. Nothing that could feel like you are minimizing what they went through. Clean, dignified, done.` :
           has('growing-family') ?
             `Think about what the kids told you, what the parents mentioned in passing. If the mom said she dreamed of a playroom in the new house, find a small item for it. If the dad mentioned wanting a grill on the new patio, get him a grilling spice set. The gift should prove you heard something specific — not just "here's a cutting board." Add a handwritten note: "Your family made this house feel like a home. The next one is going to be even better."` :
-            `The closing gift philosophy: it should make them cry, not just smile. It should prove you were listening to something they said in PASSING — not something obvious. If the seller mentioned their grandmother's recipe during a conversation, have it hand-lettered and framed. If they said they have dreamed of a beach vacation after the sale, give them a small item connected to that dream. If they mentioned a favorite local restaurant, get a gift card with a note that references the conversation. The less it costs and the more personal it is, the more powerful it becomes.`
+            has('investor') ?
+              `Keep it professional, not sentimental. A clean, well-designed market report for the area, a business card holder, or a high-quality notebook with a note: "${n}, it was a pleasure working with you. When you are ready for the next one, I am ready." Investors value competence and efficiency — your gift should reflect that.` :
+              `The closing gift philosophy: it should make them cry, not just smile. It should prove you were listening to something they said in PASSING — not something obvious. If the seller mentioned their grandmother's recipe during a conversation, have it hand-lettered and framed. If they said they have dreamed of a beach vacation after the sale, give them a small item connected to that dream. If they mentioned a favorite local restaurant, get a gift card with a note that references the conversation. The less it costs and the more personal it is, the more powerful it becomes.`
   );
 
   html += actionItem(
     `The 48-hour call: say something SPECIFIC, not generic`,
-    `Do not call and say "How are you doing?" That is what every agent says. Instead, say something that proves ${n} is not just another closed file. Reference a specific moment from your time together. Mention the house. Make it real. The difference between "just checking in" and "I drove past your old house today and thought of you" is the difference between an agent they forget and an agent they send every person they know.`,
-    `"${n}, I drove past your old house today and thought of you. How are you feeling about everything? ... I keep thinking about [specific moment — the day you listed, the way you reacted to the first offer, something personal]. Working with you was really special for me. I mean that. If anything comes up — anything at all — I'm always just a call away."`
+    has('investor') ?
+      `Do not just send a "congrats on closing" text. Even with investors, a personal touch separates you from every other agent. Reference a specific moment from the deal — the negotiation, a problem you solved together, the speed of the closing. Investors do not want sentimentality, but they remember competence and professionalism.` :
+      `Do not call and say "How are you doing?" That is what every agent says. Instead, say something that proves ${n} is not just another closed file. Reference a specific moment from your time together. Mention the house. Make it real. The difference between "just checking in" and "I drove past your old house today and thought of you" is the difference between an agent they forget and an agent they send every person they know.`,
+    has('investor') ?
+      `"${n}, I wanted to check in — how are you feeling about the numbers now that the dust has settled? That negotiation we pulled off on the repair request saved you [amount]. I keep thinking about how smoothly that came together. If you're eyeing another property, I've got my radar on — just say the word."` :
+      `"${n}, I drove past your old house today and thought of you. How are you feeling about everything? ... I keep thinking about [specific moment — the day you listed, the way you reacted to the first offer, something personal]. Working with you was really special for me. I mean that. If anything comes up — anything at all — I'm always just a call away."`
   );
 
   html += actionItem(
     `30-day check-in: Be USEFUL, not salesy — send them a referral TO them`,
-    `Do not text "just checking in." That is code for "I want referrals." Instead, be genuinely useful. Think about what ${n} needs in their new life and provide it. A restaurant recommendation. A handyman you trust. A dry cleaner. The plumber they mentioned needing. When you are useful with no agenda, you become indispensable. People refer the person who helps them, not the person who asks them for help.`,
-    `"Hey ${n}! You mentioned you needed a good plumber — here's mine, tell him I sent you. He's honest and he won't overcharge you. Hope you're settling in great. Let me know if you need anything else — I've got a whole list of people I trust."`
+    has('investor') ?
+      `For investors, "useful" means market intelligence. Send them a quick snapshot of what is happening in the area where they sold — new listings, price trends, anything that validates their timing. This positions you as the data-driven agent they want for their next transaction, not just the one who listed their last one.` :
+      `Do not text "just checking in." That is code for "I want referrals." Instead, be genuinely useful. Think about what ${n} needs in their new life and provide it. A restaurant recommendation. A handyman you trust. A dry cleaner. The plumber they mentioned needing. When you are useful with no agenda, you become indispensable. People refer the person who helps them, not the person who asks them for help.`,
+    has('investor') ?
+      `"${n}, quick market update — since you sold, the area has [trend data]. Thought you'd want to see how your timing played out. I've also been watching a few properties that fit your investment criteria. Want me to send them over when something hits?"` :
+      `"Hey ${n}! You mentioned you needed a good plumber — here's mine, tell him I sent you. He's honest and he won't overcharge you. Hope you're settling in great. Let me know if you need anything else — I've got a whole list of people I trust."`
   );
 
   html += actionItem(
     `60-day check-in: A HANDWRITTEN note referencing something personal`,
-    `Not a text. Not an email. A handwritten card mailed to their new address. Reference something specific from your transaction together — an inside joke, a stressful moment you got through, a funny memory. Handwritten notes are so rare now that they feel like treasures. This is the touch that makes ${n} think of you every time someone says the word "real estate."`,
-    `Mail a handwritten card: "${n}, I still laugh about the day [specific funny or memorable moment from the transaction]. Hope you're loving the new chapter. I think about our time working together and it makes me smile. If you ever need anything — even just someone to vent to about homeowner stuff — you know where to find me."`
+    has('investor') ?
+      `Even investors appreciate a personal touch when it is professional and relevant. A handwritten note that references a specific moment from the deal — not generic congratulations — tells them you pay attention to details. That is exactly the quality they want in an agent for their next deal.` :
+      `Not a text. Not an email. A handwritten card mailed to their new address. Reference something specific from your transaction together — an inside joke, a stressful moment you got through, a funny memory. Handwritten notes are so rare now that they feel like treasures. This is the touch that makes ${n} think of you every time someone says the word "real estate."`,
+    has('investor') ?
+      `Mail a handwritten note: "${n}, I was thinking about that deal we closed and how well it came together — especially [reference a specific negotiation win or challenge you solved]. If anything comes across my desk that fits your criteria, you will be my first call. Looking forward to the next one."` :
+      `Mail a handwritten card: "${n}, I still laugh about the day [specific funny or memorable moment from the transaction]. Hope you're loving the new chapter. I think about our time working together and it makes me smile. If you ever need anything — even just someone to vent to about homeowner stuff — you know where to find me."`
   );
 
   html += actionItem(
@@ -2374,17 +2403,32 @@ function getQuestionsData() {
   if (has('growing-family', 'pets')) {
     const familyOrPets = has('growing-family') && has('pets') ? 'your family and your pets' :
       has('growing-family') ? 'your family' : 'your pets';
-    questions.push({
-      text: `"Tell me about ${familyOrPets} — what's the one thing about your current home that doesn't work for them?"`,
-      sub: `<strong>Coach's note:</strong> This question reveals the PAIN POINT, not just the wish list. "We need more space" is a wish. "My son doesn't have room for his wheelchair to turn around in the hallway" is a pain point. "My dog can't go outside without a leash because there's no fence" is a pain point. Pain points create urgency and clarity. When you find a home that solves the specific pain, you will see it in their eyes — and you will know. Parents and pet owners will choose YOU over a cheaper agent every single time if you show that you see and care about the beings they love most.`
-    });
+    if (state.clientType === 'buyer') {
+      questions.push({
+        text: `"Tell me about ${familyOrPets} — what's the one thing about your current home that doesn't work for them?"`,
+        sub: `<strong>Coach's note:</strong> This question reveals the PAIN POINT, not just the wish list. "We need more space" is a wish. "My son doesn't have room for his wheelchair to turn around in the hallway" is a pain point. "My dog can't go outside without a leash because there's no fence" is a pain point. Pain points create urgency and clarity. When you find a home that solves the specific pain, you will see it in their eyes — and you will know. Parents and pet owners will choose YOU over a cheaper agent every single time if you show that you see and care about the beings they love most.`
+      });
+    } else {
+      questions.push({
+        text: `"Tell me about ${familyOrPets} — what do I need to know to make the showing process smooth for everyone at home?"`,
+        sub: `<strong>Coach's note:</strong> For sellers with pets or kids, showings disrupt daily life. Asking this shows you see them as a family, not just a transaction. You will learn where the dog goes during showings, what time the kids nap, whether the cat bolts for the door. These details prevent disasters and make the seller feel respected. The agent who plans around real life — not just the MLS schedule — earns trust fast.`
+      });
+    }
   }
 
-  // Seller-specific discovery question
-  if (state.clientType === 'seller') {
+  // Seller-specific discovery question — only if they live there (not vacant/investment)
+  if (state.clientType === 'seller' && state.livingInHome === 'yes' && !has('investor')) {
     questions.push({
       text: `"Have you already started thinking about where you'll go next — or is that something you still need to figure out?"`,
       sub: `<strong>Coach's note:</strong> This reveals if they're also buying, which changes your entire timeline strategy. It also uncovers hidden stress — if they don't have a plan for where to go, selling feels much more overwhelming. If they DO have a plan, you can coordinate timelines. Either way, this question shows you're thinking about their whole life, not just the sale.`
+    });
+  }
+
+  // Seller question for investors/vacant — different angle
+  if (state.clientType === 'seller' && (state.livingInHome !== 'yes' || has('investor'))) {
+    questions.push({
+      text: `"What's your ideal timeline — and is there a hard deadline I should know about, like a tax situation, another purchase, or a life event driving this?"`,
+      sub: `<strong>Coach's note:</strong> Investors and second-home sellers have different urgency. It is rarely emotional — it is financial or strategic. Knowing their deadline tells you whether to price aggressively for a quick sale or hold firm for maximum return. This question also surfaces motivations they might not volunteer — a 1031 exchange window, capital needed for another purchase, or a change in financial strategy.`
     });
   }
 

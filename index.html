@@ -1798,6 +1798,14 @@ function generateSellerPlan(n) {
     );
   }
 
+  if (has('second-home')) {
+    html += actionItem(
+      `Capture the FEELING of this mountain property — visit at golden hour and shoot raw video on your phone`,
+      `Mountain homes sell on emotion and lifestyle, not square footage. Professional photos are necessary but they are not enough — they look like every other listing. What sells the DREAM is a 30-second video you shoot yourself at the property's best time of day. Morning fog rolling through the valley from the back deck. Golden hour light flooding the porch with a coffee mug in frame. The sound of nothing but wind and birds from the hot tub. Post it to social media with the caption "This is what Tuesday morning looks like at [address]." This costs nothing. It creates desire that staged professional photos cannot touch. A buyer scrolling Instagram at their desk in Charlotte or Raleigh sees that video and something shifts — they stop thinking about a house and start thinking about a LIFE. Visit at sunrise AND sunset to know which one is the property's magic hour. Every mountain home has one.`,
+      `"${n}, I want to do something special for your property. I'm going to come up and spend some time here at golden hour — morning and evening — and capture what this place actually FEELS like. Not just how it looks in photos, but the fog in the valley, the light on the deck, the quiet. I'm going to post it on social media and let people see what it's really like to wake up here. Professional photos sell specs. What I'm going to capture sells the dream. And that's what mountain buyers are buying — the dream."`
+    );
+  }
+
   // Phase 2
   html += phaseHeader('Phase 2', 'First 2 Weeks on Market');
 
@@ -1818,6 +1826,14 @@ function generateSellerPlan(n) {
       `Connect ${n} with trusted resources in their new city`,
       `This goes beyond your job description — and that is exactly why it matters. Most agents wave goodbye at closing. The one who helps the seller get settled in their next life earns referrals from two zip codes.`,
       `"${n}, I know you've got a lot on your plate with the move. I've reached out to a couple of agents I trust in [new city] — would it be helpful if I connected you? I want to make sure you're taken care of on that end too."`
+    );
+  }
+
+  if (has('second-home')) {
+    html += actionItem(
+      `Create a "Mountain Life Guide" — one page, specific to THIS property, for showings`,
+      `Most listing descriptions say "close to skiing and hiking." That is lazy and every listing in the High Country says it. Create a one-page guide specific to THIS property with real details only a local would know: "10 minutes to Sugar Mountain slopes. The best sunset is from the back deck in October — face west with a glass of wine. The Pedalin' Pig in Boone has the best BBQ within 20 minutes. Grandfather Mountain is a 25-minute drive up the Parkway. The local favorite coffee shop is [name] in [town]. Friday nights in Blowing Rock the whole town walks Main Street." Leave printed copies at every showing and include it as a PDF in the MLS. This transforms the listing from "a house in the mountains" to "a lifestyle waiting to be lived." Buyers do not buy mountain homes for the house — they buy for the life they imagine living there. Hand them that life on a single page.`,
+      `"${n}, I'm creating something special for your listing — a one-page Mountain Life Guide specific to your property. Not the generic 'close to skiing' stuff every listing says. I'm talking about the exact drive time to Sugar Mountain, the best restaurant within 20 minutes, where to get coffee, the trail you can walk to from the driveway. The stuff that makes someone reading it think 'I can already see myself there.' I know this area and I want buyers to feel what it's like to actually LIVE here. Can you tell me your personal favorites — the spots you always take guests?"`
     );
   }
 
@@ -1874,39 +1890,53 @@ function generateSellerPlan(n) {
           `Keep it respectful and forward-looking. A simple, handwritten note: "You handled this with more grace than you probably realize. Here's to whatever comes next." Nothing that references the past. Nothing that could feel like you are minimizing what they went through. Clean, dignified, done.` :
           has('growing-family') ?
             `Think about what the kids told you, what the parents mentioned in passing. If the mom said she dreamed of a playroom in the new house, find a small item for it. If the dad mentioned wanting a grill on the new patio, get him a grilling spice set. The gift should prove you heard something specific — not just "here's a cutting board." Add a handwritten note: "Your family made this house feel like a home. The next one is going to be even better."` :
-            has('investor') ?
-              `Keep it professional, not sentimental. A clean, well-designed market report for the area, a business card holder, or a high-quality notebook with a note: "${n}, it was a pleasure working with you. When you are ready for the next one, I am ready." Investors value competence and efficiency — your gift should reflect that.` :
-              `The closing gift philosophy: it should make them cry, not just smile. It should prove you were listening to something they said in PASSING — not something obvious. If the seller mentioned their grandmother's recipe during a conversation, have it hand-lettered and framed. If they said they have dreamed of a beach vacation after the sale, give them a small item connected to that dream. If they mentioned a favorite local restaurant, get a gift card with a note that references the conversation. The less it costs and the more personal it is, the more powerful it becomes.`
+            has('second-home') ?
+              `Frame a photo of their favorite view from the property — the one they described when you asked what they would miss most. If they mentioned watching sunsets from the deck, frame that sunset. If they talked about waking up to morning fog in the valley, capture and frame that moment. This costs fifteen dollars and they will keep it forever. Add a handwritten note: "The mountains will always be yours. Thank you for sharing this place with me." A mountain home is not just real estate — it is a piece of someone's soul. Your closing gift should honor that.` :
+              has('investor') ?
+                `Keep it professional, not sentimental. A clean, well-designed market report for the area, a business card holder, or a high-quality notebook with a note: "${n}, it was a pleasure working with you. When you are ready for the next one, I am ready." Investors value competence and efficiency — your gift should reflect that.` :
+                `The closing gift philosophy: it should make them cry, not just smile. It should prove you were listening to something they said in PASSING — not something obvious. If the seller mentioned their grandmother's recipe during a conversation, have it hand-lettered and framed. If they said they have dreamed of a beach vacation after the sale, give them a small item connected to that dream. If they mentioned a favorite local restaurant, get a gift card with a note that references the conversation. The less it costs and the more personal it is, the more powerful it becomes.`
   );
 
   html += actionItem(
     `The 48-hour call: say something SPECIFIC, not generic`,
-    has('investor') ?
-      `Do not just send a "congrats on closing" text. Even with investors, a personal touch separates you from every other agent. Reference a specific moment from the deal — the negotiation, a problem you solved together, the speed of the closing. Investors do not want sentimentality, but they remember competence and professionalism.` :
-      `Do not call and say "How are you doing?" That is what every agent says. Instead, say something that proves ${n} is not just another closed file. Reference a specific moment from your time together. Mention the house. Make it real. The difference between "just checking in" and "I drove past your old house today and thought of you" is the difference between an agent they forget and an agent they send every person they know.`,
-    has('investor') ?
+    has('second-home') ?
+      `Mountain property sellers are emotional in a different way than primary home sellers. They are not leaving a place where they lived every day — they are letting go of a place where they ESCAPED. The weekends, the holidays, the quiet mornings. Reference the property specifically — the view, a memory they shared, a season they loved most.` :
+      has('investor') ?
+        `Do not just send a "congrats on closing" text. Even with investors, a personal touch separates you from every other agent. Reference a specific moment from the deal — the negotiation, a problem you solved together, the speed of the closing. Investors do not want sentimentality, but they remember competence and professionalism.` :
+        `Do not call and say "How are you doing?" That is what every agent says. Instead, say something that proves ${n} is not just another closed file. Reference a specific moment from your time together. Mention the house. Make it real. The difference between "just checking in" and "I drove past your old house today and thought of you" is the difference between an agent they forget and an agent they send every person they know.`,
+    has('second-home') ?
+      `"${n}, I keep thinking about that view from the deck. Whoever gets to wake up to that every morning is lucky — but nobody will love it the way you did. How are you feeling about everything? ... I just want you to know, working with you on this property was special for me. These mountain places have a soul to them. If you ever need anything — or if you find yourself missing the High Country and wanting to look again — I'm always here."` :
+      has('investor') ?
       `"${n}, I wanted to check in — how are you feeling about the numbers now that the dust has settled? That negotiation we pulled off on the repair request saved you [amount]. I keep thinking about how smoothly that came together. If you're eyeing another property, I've got my radar on — just say the word."` :
       `"${n}, I drove past your old house today and thought of you. How are you feeling about everything? ... I keep thinking about [specific moment — the day you listed, the way you reacted to the first offer, something personal]. Working with you was really special for me. I mean that. If anything comes up — anything at all — I'm always just a call away."`
   );
 
   html += actionItem(
     `30-day check-in: Be USEFUL, not salesy — send them a referral TO them`,
-    has('investor') ?
-      `For investors, "useful" means market intelligence. Send them a quick snapshot of what is happening in the area where they sold — new listings, price trends, anything that validates their timing. This positions you as the data-driven agent they want for their next transaction, not just the one who listed their last one.` :
-      `Do not text "just checking in." That is code for "I want referrals." Instead, be genuinely useful. Think about what ${n} needs in their new life and provide it. A restaurant recommendation. A handyman you trust. A dry cleaner. The plumber they mentioned needing. When you are useful with no agenda, you become indispensable. People refer the person who helps them, not the person who asks them for help.`,
-    has('investor') ?
-      `"${n}, quick market update — since you sold, the area has [trend data]. Thought you'd want to see how your timing played out. I've also been watching a few properties that fit your investment criteria. Want me to send them over when something hits?"` :
-      `"Hey ${n}! You mentioned you needed a good plumber — here's mine, tell him I sent you. He's honest and he won't overcharge you. Hope you're settling in great. Let me know if you need anything else — I've got a whole list of people I trust."`
+    has('second-home') ?
+      `Send them a photo of the mountains in the current season. If it is fall, a foliage shot from the Blue Ridge Parkway. If it is winter, a snow scene from the ridgeline above Boone. If it is summer, a shot of the New River with kayakers. This keeps you connected to what they loved about owning in the High Country without asking for anything. Mountain sellers do not miss the property — they miss the FEELING. Give them that feeling with a single image and a short text.` :
+      has('investor') ?
+        `For investors, "useful" means market intelligence. Send them a quick snapshot of what is happening in the area where they sold — new listings, price trends, anything that validates their timing. This positions you as the data-driven agent they want for their next transaction, not just the one who listed their last one.` :
+        `Do not text "just checking in." That is code for "I want referrals." Instead, be genuinely useful. Think about what ${n} needs in their new life and provide it. A restaurant recommendation. A handyman you trust. A dry cleaner. The plumber they mentioned needing. When you are useful with no agenda, you become indispensable. People refer the person who helps them, not the person who asks them for help.`,
+    has('second-home') ?
+      `Text a beautiful photo of the mountains in the current season: "${n}, the mountains are stunning right now — [fall color is peaking along the Parkway / the first snow just dusted Beech Mountain / the rhododendrons are blooming everywhere / the valley is bright green and the river is perfect]. Made me think of you. Hope you're doing well." That is it. No ask. No agenda. Just a connection to the place they loved.` :
+      has('investor') ?
+        `"${n}, quick market update — since you sold, the area has [trend data]. Thought you'd want to see how your timing played out. I've also been watching a few properties that fit your investment criteria. Want me to send them over when something hits?"` :
+        `"Hey ${n}! You mentioned you needed a good plumber — here's mine, tell him I sent you. He's honest and he won't overcharge you. Hope you're settling in great. Let me know if you need anything else — I've got a whole list of people I trust."`
   );
 
   html += actionItem(
     `60-day check-in: A HANDWRITTEN note referencing something personal`,
-    has('investor') ?
-      `Even investors appreciate a personal touch when it is professional and relevant. A handwritten note that references a specific moment from the deal — not generic congratulations — tells them you pay attention to details. That is exactly the quality they want in an agent for their next deal.` :
-      `Not a text. Not an email. A handwritten card mailed to their new address. Reference something specific from your transaction together — an inside joke, a stressful moment you got through, a funny memory. Handwritten notes are so rare now that they feel like treasures. This is the touch that makes ${n} think of you every time someone says the word "real estate."`,
-    has('investor') ?
-      `Mail a handwritten note: "${n}, I was thinking about that deal we closed and how well it came together — especially [reference a specific negotiation win or challenge you solved]. If anything comes across my desk that fits your criteria, you will be my first call. Looking forward to the next one."` :
-      `Mail a handwritten card: "${n}, I still laugh about the day [specific funny or memorable moment from the transaction]. Hope you're loving the new chapter. I think about our time working together and it makes me smile. If you ever need anything — even just someone to vent to about homeowner stuff — you know where to find me."`
+    has('second-home') ?
+      `Send a handwritten note that references their specific property and what made it special. Mountain homes have a soul that primary residences rarely do — every one has a story about a particular view, a porch, a fireplace, a season. Reference that story. Make them feel like their mountain home mattered to you too, not just as a listing, but as a place. This is the kind of note they will pin to their fridge.` :
+      has('investor') ?
+        `Even investors appreciate a personal touch when it is professional and relevant. A handwritten note that references a specific moment from the deal — not generic congratulations — tells them you pay attention to details. That is exactly the quality they want in an agent for their next deal.` :
+        `Not a text. Not an email. A handwritten card mailed to their new address. Reference something specific from your transaction together — an inside joke, a stressful moment you got through, a funny memory. Handwritten notes are so rare now that they feel like treasures. This is the touch that makes ${n} think of you every time someone says the word "real estate."`,
+    has('second-home') ?
+      `Mail a handwritten card: "${n}, I was driving past [area/road near their property] the other day and the view reminded me of your place. I still think about that [specific detail — the morning fog from the deck, the way the sunset hit the ridge, the fireplace on cold mornings]. I hope letting go has brought you peace, and that your next chapter is everything you hoped for. If the mountains ever call you back — and they usually do — you know who to call."` :
+      has('investor') ?
+        `Mail a handwritten note: "${n}, I was thinking about that deal we closed and how well it came together — especially [reference a specific negotiation win or challenge you solved]. If anything comes across my desk that fits your criteria, you will be my first call. Looking forward to the next one."` :
+        `Mail a handwritten card: "${n}, I still laugh about the day [specific funny or memorable moment from the transaction]. Hope you're loving the new chapter. I think about our time working together and it makes me smile. If you ever need anything — even just someone to vent to about homeowner stuff — you know where to find me."`
   );
 
   html += actionItem(
@@ -2003,6 +2033,14 @@ function generateBuyerPlan(n) {
     );
   }
 
+  if (has('second-home')) {
+    html += actionItem(
+      `Send a "Season Snapshot" video — 60 seconds of the High Country right now`,
+      `Second-home buyers are often buying from Charlotte, Raleigh, or out of state. They are dreaming about mountain life but they cannot see it every day. They are scrolling Zillow from a desk somewhere flat. Record a casual 60-second video on your phone showing what the mountains look like RIGHT NOW. If it is fall, drive a stretch of the Blue Ridge Parkway and let the camera take in the foliage. If it is winter, show fresh snow on the peaks above Banner Elk. If it is spring, film the rhododendrons exploding with color. If it is summer, show the New River with people tubing or the view from Grandfather Mountain. Send it via text with a casual note. This makes ${n} feel connected to the place before they even arrive, and it positions YOU as someone who lives and breathes this lifestyle — not just sells it. Every other agent sends listing links. You send the dream.`,
+      `Text the video: "${n}, I wanted to show you what the mountains look like right now. This is [describe what's in the video — the Parkway this morning, the view from Blowing Rock, the first snow on Sugar Mountain]. I know you can't be here every day yet, so I figured I'd bring a little bit of the High Country to you. When you're ready to come up and start looking, I'll have everything lined up. Just say the word."`
+    );
+  }
+
   // Phase 2
   html += phaseHeader('Phase 2', 'The Home Search');
 
@@ -2031,6 +2069,14 @@ function generateBuyerPlan(n) {
       `Scout pet-friendly features at every showing`,
       `Pet owners are silently evaluating every home through their pet's eyes. Be the agent who does it OUT LOUD. Fenced yard? Hardwood floors? Nearby dog park? Cat-friendly window ledges? Say it before they notice it.`,
       `Text before or during showings: "${n}, this one has a great fenced backyard — I think [pet name] would love the space. The floors are pet-friendly, no white carpet situation. AND there's a dog park about a half mile down the road. I checked."`
+    );
+  }
+
+  if (has('second-home')) {
+    html += actionItem(
+      `Check the VIEW at the property's best time of day — and schedule showings to match`,
+      `Mountain homes live and die by the view and the light. A property with a stunning west-facing sunset view shown at 10am looks like a nice cabin. The same property shown at 5pm with golden light flooding the deck and the Blue Ridge glowing amber is a DREAM. Know the compass orientation of every property you show. Sunrise view? Show it early. Sunset property? Schedule it at golden hour. A property that faces into a valley with morning fog? Get there at 8am. Tell the buyer: "I scheduled this one at 5pm on purpose — wait until you see what happens to this view." This is the kind of intentionality that makes a buyer fall in love on the spot. Mountain buyers are not buying a house — they are buying what they see from the porch. Make sure they see it at its absolute best.`,
+      `"${n}, I want to be strategic about when we see these properties. Mountain homes are all about the view and the light, and the same house can feel completely different depending on the time of day. I've checked the orientation of each one — this first property faces west, so I scheduled it for 5pm. Wait until you see what happens when the sun drops behind those ridges. Trust me on this one."`
     );
   }
 
@@ -2075,6 +2121,14 @@ function generateBuyerPlan(n) {
     `This is extraordinary and it takes 3 minutes. Before closing, knock on one neighbor's door. "My client is about to move in next door. They're wonderful people. I just wanted to introduce myself and let you know." Then tell ${n}: "I met your next-door neighbor today — [name], seems really nice. They're looking forward to having you." This makes ${n} feel like they already BELONG before they have even moved in. They go from "I'm buying a house" to "I'm joining a neighborhood." Almost no agent in the country does this.`,
     `Knock on the neighbor's door: "Hi, I'm [your name] — I'm a real estate agent and my client is about to move in next door. They're wonderful people and I just wanted to say hello." Then text ${n}: "Hey, I did something a little extra — I stopped by and met your next-door neighbor today. Their name is [name] and they seem really great. They said they're looking forward to having you. You've already got a friend on the street."`
   );
+
+  if (has('second-home')) {
+    html += actionItem(
+      `Create a "First Visit Kit" and leave it at the property before their first trip up`,
+      `After closing, go to the property before ${n}'s first visit and leave a small basket on the kitchen counter. Include local coffee from a roaster in Boone or Blowing Rock, a trail map of the area, a handwritten list of YOUR personal favorite restaurants and hikes, and a welcome note. Then add seasonal tips that only a local would know. Winter: "Keep the heat at 55 when you're away so the pipes don't freeze. Here's the number for the best local plow service." Summer: "The Watauga River is 12 minutes away for tubing. Green Park Inn in Blowing Rock has the best porch in the mountains for an evening drink." Fall: "Peak leaf color hits the Parkway around the third week of October — plan your trip accordingly." Spring: "The wildflowers on Grandfather Mountain are worth the drive in April." This makes their first mountain weekend unforgettable and positions you as their permanent High Country resource — not just the agent who sold them the place.`,
+      `Text ${n} the day before their first trip up: "Hey ${n}, I left a little something at the house for you. Nothing big — just a welcome-to-the-mountains kit with some local coffee, a trail map, and my personal list of the best spots up here. I also included some seasonal tips that'll save you a headache. This place is going to change your life. Enjoy every minute of your first weekend. And text me if you need ANYTHING — I'm your mountain person now."`
+    );
+  }
 
   html += actionItem(
     `Send regular updates during the under-contract phase`,
@@ -2150,26 +2204,38 @@ function generateBuyerPlan(n) {
 
   html += actionItem(
     `30-day check-in: Be USEFUL — send a vetted list of local service providers`,
-    `Do not text "just checking in." Be genuinely useful. Think about what ${n} needs as a new homeowner. A good plumber. An honest electrician. A reliable handyman. A house cleaner. Send them a curated list of people YOU trust — not a generic Google list, YOUR people. When you are useful with no agenda, you become indispensable.`,
-    `"Hey ${n}! Hope you're settling in great. I put together something for you — my personal list of vetted local service providers. Plumber, electrician, HVAC, handyman, house cleaner. These are the people I use and trust. If you ever need anyone, just text me — I've probably got a person. Consider me your real estate concierge for life."`
+    has('second-home') ?
+      `For a mountain second-home buyer, "useful" means local knowledge they cannot get from Google. Send ${n} a curated list of mountain-specific service providers: a reliable handyman who knows mountain homes, a plow service for winter access, a property manager for when they are away, a chimney sweep, and the best firewood delivery in the area. These are the people who will keep their mountain home running smoothly — and every one of them is a reason to think of you.` :
+      `Do not text "just checking in." Be genuinely useful. Think about what ${n} needs as a new homeowner. A good plumber. An honest electrician. A reliable handyman. A house cleaner. Send them a curated list of people YOU trust — not a generic Google list, YOUR people. When you are useful with no agenda, you become indispensable.`,
+    has('second-home') ?
+      `"Hey ${n}! Hope you're loving the mountain place. I put together a list of local people you'll want to have in your phone — handyman, plow service, chimney sweep, firewood delivery, and a property manager in case you ever need someone to check on the house when you're not here. These are MY people — I use them and trust them. Consider me your permanent mountain concierge. Text me anytime you need anything up here."` :
+      `"Hey ${n}! Hope you're settling in great. I put together something for you — my personal list of vetted local service providers. Plumber, electrician, HVAC, handyman, house cleaner. These are the people I use and trust. If you ever need anyone, just text me — I've probably got a person. Consider me your real estate concierge for life."`
   );
 
   html += actionItem(
     `60-day check-in: A HANDWRITTEN note referencing something personal from your journey together`,
-    `Not a text. Not an email. A handwritten card mailed to their home. Reference something specific — an inside joke, a stressful moment you got through together, a funny memory from a showing. Handwritten notes are so rare now that receiving one feels like a gift. This is the touch that keeps you in their heart, not just their phone.`,
-    `Mail a handwritten card: "${n}, I was [thinking about something specific — a funny moment during the search, a house you both laughed about, a memory from the journey]. Hope you're loving the new place. I still smile when I think about our time working together. If you ever need anything at all — you know where to find me."`
+    has('second-home') ?
+      `Mail a handwritten note to their PRIMARY address — the one they go home to during the week. This is key. The note arriving in their everyday mailbox brings the mountains into their regular life. Reference something specific from your time together — a property you laughed about, the moment they fell in love with the view, a funny showing story. This note should make them smile at their kitchen table and think about their next trip up.` :
+      `Not a text. Not an email. A handwritten card mailed to their home. Reference something specific — an inside joke, a stressful moment you got through together, a funny memory from a showing. Handwritten notes are so rare now that receiving one feels like a gift. This is the touch that keeps you in their heart, not just their phone.`,
+    has('second-home') ?
+      `Mail a handwritten card to their primary address: "${n}, I was driving through [the area near their property] the other day and the mountains were absolutely glowing. Made me think about the day you first saw that view from the deck and I knew — you were done looking. Hope you're getting up here as much as you can. The [current season] up here has been gorgeous. If you ever need anything at the house or just want a local update, you know where to find me."` :
+      `Mail a handwritten card: "${n}, I was [thinking about something specific — a funny moment during the search, a house you both laughed about, a memory from the journey]. Hope you're loving the new place. I still smile when I think about our time working together. If you ever need anything at all — you know where to find me."`
   );
 
   html += actionItem(
     `90-day check-in: Plant the seed naturally — don't ask, just mention`,
     `Do NOT ask for referrals at 90 days. Instead, mention that you just helped someone else — it plants the seed without any pressure. "I just helped another family find a home near you" makes them think about who THEY know. It signals you are active and successful. It creates the connection between "people I care about who need a home" and "my agent" without making them feel like they owe you something.`,
-    `"Hey ${n}, I just helped another family find a home in your area — made me think of you! How's everything going? Hope you're making a million memories in that house. It still makes me happy that we found the right one."`
+    has('second-home') ?
+      `"Hey ${n}, I just helped another family find a mountain place about 10 minutes from yours. Made me think of you — hope you're getting up here as much as you want. If you ever have friends who start talking about getting a place in the mountains, just send them my way. I'll take care of them like I took care of you. And hey — wouldn't it be nice to have friends with a place nearby?"` :
+      `"Hey ${n}, I just helped another family find a home in your area — made me think of you! How's everything going? Hope you're making a million memories in that house. It still makes me happy that we found the right one."`
   );
 
   html += actionItem(
     `Anniversary: Send their home's current estimated value — useful AND unforgettable`,
     `Forget "happy home-iversary." Instead, send ${n} their home's estimated current value with context. This gives them genuinely useful financial information AND positions you as the market expert they should call when anyone they know is thinking about real estate. It is the perfect blend of valuable and memorable.`,
-    `"${n}, can you believe it's been a year? I was looking at market data and wanted you to know — your home has appreciated approximately $[X] since you bought it. Your investment is growing and you should feel great about that. If you ever want a full market update, or if anyone you know is curious about what their home is worth, I'm always happy to run the numbers. Cheers to year two!"`
+    has('second-home') ?
+      `"${n}, can you believe it's been a year since you got your mountain place? I pulled some market data — your property has appreciated approximately $[X] since you bought it. The High Country market has been [trend]. Your investment is in great shape. If you ever want to know the full picture, or if any of your friends are thinking about getting a place up here, I'm always happy to run the numbers. Here's to many more mountain weekends. Cheers to year two!"` :
+      `"${n}, can you believe it's been a year? I was looking at market data and wanted you to know — your home has appreciated approximately $[X] since you bought it. Your investment is growing and you should feel great about that. If you ever want a full market update, or if anyone you know is curious about what their home is worth, I'm always happy to run the numbers. Cheers to year two!"`
   );
 
   return html;
@@ -2210,6 +2276,11 @@ function generateReferralSection(n) {
     scripts.push({
       label: 'The Investor Network',
       text: `"If you know any other investors looking at this market, I'd love to bring the same analytical approach to their search. I know you don't want an agent who gets emotional about the deal — you want someone who runs the numbers and moves fast. That's what I bring to every investor relationship."`
+    });
+  } else if (has('second-home')) {
+    scripts.push({
+      label: 'The Mountain Community',
+      text: `"You know how it goes — you'll be back home telling friends about your mountain place, showing them photos from the deck, and someone is going to say 'We've been thinking about getting a place up there too.' When that happens, just tell them you know someone who lives and breathes these mountains. I'll take care of them like I took care of you — and hey, wouldn't it be nice to have friends with a place nearby? Half the fun of owning in the High Country is sharing it with people you love."`
     });
   } else {
     scripts.push({

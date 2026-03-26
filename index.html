@@ -1195,6 +1195,11 @@
               <span class="check-label">Investment property — not emotionally attached</span>
             </label>
             <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="second-home">
+              <span class="checkmark"></span>
+              <span class="check-label">2nd home / vacation property</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
               <input type="checkbox" value="retiring">
               <span class="checkmark"></span>
               <span class="check-label">Retiring</span>
@@ -1248,6 +1253,11 @@
               <input type="checkbox" value="investor">
               <span class="checkmark"></span>
               <span class="check-label">Investor / not emotionally attached</span>
+            </label>
+            <label class="checkbox-item" onclick="toggleCheck(this)">
+              <input type="checkbox" value="second-home">
+              <span class="checkmark"></span>
+              <span class="check-label">2nd home / vacation property</span>
             </label>
             <label class="checkbox-item" onclick="toggleCheck(this)">
               <input type="checkbox" value="retiring">
@@ -1621,16 +1631,16 @@ function renderQuestions() {
     }
   }
 
-  // Seller-specific discovery question — only if they live there (not vacant/investment)
-  if (state.clientType === 'seller' && state.livingInHome === 'yes' && !has('investor')) {
+  // Seller-specific discovery question — only if they live there (not vacant/investment/2nd home)
+  if (state.clientType === 'seller' && state.livingInHome === 'yes' && !has('investor') && !has('second-home')) {
     questions.push({
       text: `"Have you already started thinking about where you'll go next — or is that something you still need to figure out?"`,
       sub: `<strong>Coach's note:</strong> This reveals if they're also buying, which changes your entire timeline strategy. It also uncovers hidden stress — if they don't have a plan for where to go, selling feels much more overwhelming. If they DO have a plan, you can coordinate timelines. Either way, this question shows you're thinking about their whole life, not just the sale.`
     });
   }
 
-  // Seller question for investors/vacant — different angle
-  if (state.clientType === 'seller' && (state.livingInHome !== 'yes' || has('investor'))) {
+  // Seller question for investors/vacant/2nd home — different angle
+  if (state.clientType === 'seller' && (state.livingInHome !== 'yes' || has('investor') || has('second-home'))) {
     questions.push({
       text: `"What's your ideal timeline — and is there a hard deadline I should know about, like a tax situation, another purchase, or a life event driving this?"`,
       sub: `<strong>Coach's note:</strong> Investors and second-home sellers have different urgency. It is rarely emotional — it is financial or strategic. Knowing their deadline tells you whether to price aggressively for a quick sale or hold firm for maximum return. This question also surfaces motivations they might not volunteer — a 1031 exchange window, capital needed for another purchase, or a change in financial strategy.`
@@ -2416,16 +2426,16 @@ function getQuestionsData() {
     }
   }
 
-  // Seller-specific discovery question — only if they live there (not vacant/investment)
-  if (state.clientType === 'seller' && state.livingInHome === 'yes' && !has('investor')) {
+  // Seller-specific discovery question — only if they live there (not vacant/investment/2nd home)
+  if (state.clientType === 'seller' && state.livingInHome === 'yes' && !has('investor') && !has('second-home')) {
     questions.push({
       text: `"Have you already started thinking about where you'll go next — or is that something you still need to figure out?"`,
       sub: `<strong>Coach's note:</strong> This reveals if they're also buying, which changes your entire timeline strategy. It also uncovers hidden stress — if they don't have a plan for where to go, selling feels much more overwhelming. If they DO have a plan, you can coordinate timelines. Either way, this question shows you're thinking about their whole life, not just the sale.`
     });
   }
 
-  // Seller question for investors/vacant — different angle
-  if (state.clientType === 'seller' && (state.livingInHome !== 'yes' || has('investor'))) {
+  // Seller question for investors/vacant/2nd home — different angle
+  if (state.clientType === 'seller' && (state.livingInHome !== 'yes' || has('investor') || has('second-home'))) {
     questions.push({
       text: `"What's your ideal timeline — and is there a hard deadline I should know about, like a tax situation, another purchase, or a life event driving this?"`,
       sub: `<strong>Coach's note:</strong> Investors and second-home sellers have different urgency. It is rarely emotional — it is financial or strategic. Knowing their deadline tells you whether to price aggressively for a quick sale or hold firm for maximum return. This question also surfaces motivations they might not volunteer — a 1031 exchange window, capital needed for another purchase, or a change in financial strategy.`

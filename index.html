@@ -1941,14 +1941,30 @@ function generateSellerPlan(n) {
 
   html += actionItem(
     `90-day check-in: Plant the seed naturally — never ask directly for referrals`,
-    `Do NOT ask for referrals at 90 days. Instead, tell ${n} something that plants the seed without any pressure. Mention that you just helped another family — it signals that you are active and successful. It makes them think about who they know. It creates the association between "people I care about" and "my agent" without any ask at all. People give referrals when they feel good, not when they feel obligated.`,
-    `"Hey ${n}, I just helped another family in your old neighborhood find a beautiful home. Made me think of you — hope you're doing amazing. Feels like yesterday we were in the thick of it together. Miss working with you!"`
+    has('investor') ?
+      `Do NOT ask for referrals directly. Instead, share a market insight or a deal you are working on. "I just closed on a duplex in the Triad that is cash-flowing from day one." That sentence makes every investor in their network want your number — without you asking for it.` :
+      has('second-home') ?
+        `Do NOT ask for referrals. Instead, text them something about the mountains that makes them feel connected — and mention you just helped someone else get a place nearby. That plants the seed without any pressure.` :
+        `Do NOT ask for referrals at 90 days. Instead, tell ${n} something that plants the seed without any pressure. Mention that you just helped another family — it signals that you are active and successful. It makes them think about who they know. It creates the association between "people I care about" and "my agent" without any ask at all. People give referrals when they feel good, not when they feel obligated.`,
+    has('investor') ?
+      `"${n}, just closed on a duplex in [area] — cash-flowing from month one. Made me think of you. How's your property performing? If the numbers are looking good and you're thinking about adding another one, I have been watching a couple of things I'd love to run by you."` :
+      has('second-home') ?
+        `"Hey ${n}, I just helped another family find a gorgeous place about 10 minutes from yours in [area]. The mountains have been stunning lately — [season detail]. Made me think of you. Hope you are getting up here as much as you want. If any of your friends ever start talking about getting a place in the mountains, you know who to send them to."` :
+        `"Hey ${n}, I just helped another family in your old neighborhood find a beautiful home. Made me think of you — hope you're doing amazing. Feels like yesterday we were in the thick of it together. Miss working with you!"`
   );
 
   html += actionItem(
     `Anniversary: Send their home's current estimated value — useful AND memorable`,
-    `Forget "happy home-iversary." Instead, send ${n} information that is actually useful AND positions you as the market expert. Pull an estimated value for the home they sold (or bought), and send it with context. This gives them real information, keeps you relevant, and reminds them — without saying it — that you are the person who knows this market better than anyone.`,
-    `"${n}, can you believe it's been a year? I was looking at market data and wanted you to know — your old home has appreciated approximately $[X] since you sold. You timed it well. I hope this year has been everything you dreamed. If you ever want to know what your current home is worth, or if anyone you know is curious about the market, you know I'm always happy to run the numbers. Cheers to year two."`
+    has('investor') ?
+      `On the one-year anniversary, send the investor a portfolio check-in: what the property sold for, what comparable properties are selling for now, and what the rental market has done in that area. This positions you as a long-term partner tracking their wealth, not just an agent who closed a deal twelve months ago.` :
+      has('second-home') ?
+        `Send ${n} the current estimated value of the property they sold plus a seasonal photo of the area. The combination of useful data and emotional connection is powerful. It says "I still think about your mountain place" without asking for anything.` :
+        `Forget "happy home-iversary." Instead, send ${n} information that is actually useful AND positions you as the market expert. Pull an estimated value for the home they sold (or bought), and send it with context. This gives them real information, keeps you relevant, and reminds them — without saying it — that you are the person who knows this market better than anyone.`,
+    has('investor') ?
+      `"${n}, can you believe it has been a year? Here is your one-year snapshot: the property you sold has [appreciated/held steady] since closing, comparable properties in the area are selling for [range], and rents in the neighborhood are [trending]. You made a smart move. If you are thinking about your next one — or if you want me to run numbers on anything — I am always watching the market for you. Here's to another strong year."` :
+      has('second-home') ?
+        `"${n}, it has been a year since your mountain property closed. I pulled some market data — the area has [appreciated X% / held steady], and properties like yours are selling for [range]. The High Country market is [trend]. I hope this past year has been full of great weekends up here. If you ever want the full picture on what your current home is worth, or if anyone in your life starts talking about getting a mountain place — you know I am always here. Cheers to year two."` :
+        `"${n}, can you believe it's been a year? I was looking at market data and wanted you to know — your old home has appreciated approximately $[X] since you sold. You timed it well. I hope this year has been everything you dreamed. If you ever want to know what your current home is worth, or if anyone you know is curious about the market, you know I'm always happy to run the numbers. Cheers to year two."`
   );
 
   return html;
@@ -2125,9 +2141,15 @@ function generateBuyerPlan(n) {
   }
 
   html += actionItem(
-    `Introduce yourself to a neighbor before closing — then tell ${n} about it`,
-    `This is extraordinary and it takes 3 minutes. Before closing, knock on one neighbor's door. "My client is about to move in next door. They're wonderful people. I just wanted to introduce myself and let you know." Then tell ${n}: "I met your next-door neighbor today — [name], seems really nice. They're looking forward to having you." This makes ${n} feel like they already BELONG before they have even moved in. They go from "I'm buying a house" to "I'm joining a neighborhood." Almost no agent in the country does this.`,
-    `Knock on the neighbor's door: "Hi, I'm [your name] — I'm a real estate agent and my client is about to move in next door. They're wonderful people and I just wanted to say hello." Then text ${n}: "Hey, I did something a little extra — I stopped by and met your next-door neighbor today. Their name is [name] and they seem really great. They said they're looking forward to having you. You've already got a friend on the street."`
+    has('investor') ?
+      `Introduce yourself to the property's neighbor — build goodwill for your client's investment` :
+      `Introduce yourself to a neighbor before closing — then tell ${n} about it`,
+    has('investor') ?
+      `This works differently for investment properties but is just as powerful. Knock on a neighbor's door and introduce yourself: "My client just purchased the property next door. They're good people and they plan to keep it well-maintained. If you ever notice anything that needs attention — a broken gutter, overgrown lawn — here's my card. I'll make sure it gets handled." Then tell ${n}: "I met your neighbor and gave them my card in case they ever see anything that needs attention. You've got eyes on the property even when you're not there." This is NEXT LEVEL property management before management even starts. The neighbor feels respected, ${n} feels protected, and you look like a partner, not just an agent.` :
+      `This is extraordinary and it takes 3 minutes. Before closing, knock on one neighbor's door. "My client is about to move in next door. They're wonderful people. I just wanted to introduce myself and let you know." Then tell ${n}: "I met your next-door neighbor today — [name], seems really nice. They're looking forward to having you." This makes ${n} feel like they already BELONG before they have even moved in. They go from "I'm buying a house" to "I'm joining a neighborhood." Almost no agent in the country does this.`,
+    has('investor') ?
+      `Knock on the neighbor's door: "Hi, I'm [your name] — my client just purchased the property next door. They plan to keep it in great shape. If you ever notice anything that needs attention, here's my card." Then text ${n}: "I met your neighbor at the property and gave them my card. They know you're a responsible owner and they've got my number if they ever see something that needs attention. You've got built-in neighborhood watch."` :
+      `Knock on the neighbor's door: "Hi, I'm [your name] — I'm a real estate agent and my client is about to move in next door. They're wonderful people and I just wanted to say hello." Then text ${n}: "Hey, I did something a little extra — I stopped by and met your next-door neighbor today. Their name is [name] and they seem really great. They said they're looking forward to having you. You've already got a friend on the street."`
   );
 
   if (has('second-home')) {
@@ -2204,18 +2226,34 @@ function generateBuyerPlan(n) {
   }
 
   html += actionItem(
-    `The 48-hour call: say something SPECIFIC — "Did you sleep well in your new house last night?"`,
-    `Do not call and say "how are you doing?" That is generic. Instead, ask something that proves they are a real person to you, not a closed file. "Did you sleep well in your new house last night?" or "What was the first thing you did when everyone left?" Something specific. Something human. The difference between a forgettable check-in and an unforgettable one is specificity.`,
-    `"${n}, I have to ask — did you sleep well in your new house last night? ... [Listen. React genuinely.] I love that. Working with you was genuinely one of my favorite experiences. I mean that. If ANYTHING comes up — a question about the house, a recommendation for a plumber, even if you just want to tell me about your first dinner there — I'm always just a call away."`
+    `The 48-hour call: say something SPECIFIC — prove they are a person, not a file`,
+    has('investor') ?
+      `Do not just text "congrats." Reference the specific deal — the numbers, a negotiation moment, the speed of closing. Investors remember competence. When you follow up with data and specificity, you become the agent they call for every future deal.` :
+      has('second-home') ?
+        `A mountain home buyer's first 48 hours are different — they might not even be at the property yet. Reference the specific property, the view, the moment they knew it was the one. Make them feel the excitement all over again.` :
+        `Do not call and say "how are you doing?" That is generic. Instead, ask something that proves they are a real person to you, not a closed file. "Did you sleep well in your new house last night?" or "What was the first thing you did when everyone left?" Something specific. Something human. The difference between a forgettable check-in and an unforgettable one is specificity.`,
+    has('investor') ?
+      `"${n}, I ran the final numbers — your all-in cost landed at [amount], and based on the rental comps I pulled, you should be looking at [monthly rent] which puts you at positive cash flow from month one. That is a strong start. I have already been watching the market for your next one. When you are ready, I will have the numbers ready."` :
+      has('second-home') ?
+        `"${n}, I keep thinking about the look on your face when you saw that [view / deck / fireplace / specific feature]. You made a great choice. When are you heading up for the first time? I left a little something at the house for you. And I want you to know — I am your mountain person now. Anything you need up here, anytime, just call."` :
+        `"${n}, I have to ask — did you sleep well in your new house last night? ... [Listen. React genuinely.] I love that. Working with you was genuinely one of my favorite experiences. I mean that. If ANYTHING comes up — a question about the house, a recommendation for a plumber, even if you just want to tell me about your first dinner there — I'm always just a call away."`
   );
 
   html += actionItem(
-    `Move-in surprise: a handwritten note on the counter with a $20 bill taped to it`,
-    has('growing-family') ?
-      `Leave a note on the kitchen counter with a $20 bill taped to it: "First pizza delivery in your new home is on me. Nobody unpacks the kitchen on night one — especially with kids. Welcome home, [family name]." Simple. Memorable. Nobody does it. The kids will remember "the pizza lady/man" for years.` :
-      has('pets') ?
-        `Leave a note on the kitchen counter with a $20 bill: "First pizza delivery in your new home is on me. And for [pet name] —" with a small treat or toy next to it. Simple. Memorable. Nobody does it.` :
-        `Leave a handwritten note on the kitchen counter with a $20 bill taped to it: "First pizza delivery in your new home is on me. Welcome home, ${n}." That is it. Simple. Memorable. Costs twenty dollars. Nobody does it. It will be the thing they tell their friends about.`
+    has('investor') ?
+      `Move-in surprise for rental property: Leave a folder on the kitchen counter with a typed note and your business card — "Here is your property brief, my recommended vendors, and my direct number. Welcome to the portfolio, ${n}."` :
+      has('second-home') ?
+        `Move-in surprise: Leave a welcome basket at the property before their first visit — local mountain coffee, a trail map, your handwritten list of favorite restaurants, and a note: "Welcome to the mountains, ${n}. First coffee is on me."` :
+        `Move-in surprise: a handwritten note on the counter with a $20 bill taped to it`,
+    has('investor') ?
+      `For investment properties, the "move-in surprise" is the Investment Playbook you prepared. Leave it in a clean folder on the counter with your card. The gesture is professional, not sentimental — and it is the last thing they see before they hand the keys to a tenant or a property manager. It says: my agent thinks like a partner.` :
+      has('second-home') ?
+        `Before ${n}'s first trip to their new mountain home, leave a small basket on the counter: local roasted coffee, a trail map, a list of YOUR personal favorite spots (restaurants, hikes, coffee shops, the best sunset viewpoint), and seasonal tips. This makes their first mountain weekend unforgettable. They will text their friends a photo of it.` :
+        has('growing-family') ?
+          `Leave a note on the kitchen counter with a $20 bill taped to it: "First pizza delivery in your new home is on me. Nobody unpacks the kitchen on night one — especially with kids. Welcome home, [family name]." Simple. Memorable. Nobody does it. The kids will remember "the pizza lady/man" for years.` :
+          has('pets') ?
+            `Leave a note on the kitchen counter with a $20 bill: "First pizza delivery in your new home is on me. And for [pet name] —" with a small treat or toy next to it. Simple. Memorable. Nobody does it.` :
+            `Leave a handwritten note on the kitchen counter with a $20 bill taped to it: "First pizza delivery in your new home is on me. Welcome home, ${n}." That is it. Simple. Memorable. Costs twenty dollars. Nobody does it. It will be the thing they tell their friends about.`
   );
 
   html += actionItem(
@@ -2241,17 +2279,21 @@ function generateBuyerPlan(n) {
   html += actionItem(
     `90-day check-in: Plant the seed naturally — don't ask, just mention`,
     `Do NOT ask for referrals at 90 days. Instead, mention that you just helped someone else — it plants the seed without any pressure. "I just helped another family find a home near you" makes them think about who THEY know. It signals you are active and successful. It creates the connection between "people I care about who need a home" and "my agent" without making them feel like they owe you something.`,
-    has('second-home') ?
-      `"Hey ${n}, I just helped another family find a mountain place about 10 minutes from yours. Made me think of you — hope you're getting up here as much as you want. If you ever have friends who start talking about getting a place in the mountains, just send them my way. I'll take care of them like I took care of you. And hey — wouldn't it be nice to have friends with a place nearby?"` :
-      `"Hey ${n}, I just helped another family find a home in your area — made me think of you! How's everything going? Hope you're making a million memories in that house. It still makes me happy that we found the right one."`
+    has('investor') ?
+      `"${n}, just closed on another investment property in [area] — strong cash flow deal. Made me think of you. How is your property performing? If the numbers are looking good and you want to talk about scaling up, I have been watching a few things I would love to run by you. The market is [current trend] right now and there is opportunity."` :
+      has('second-home') ?
+        `"Hey ${n}, I just helped another family find a mountain place about 10 minutes from yours. Made me think of you — hope you're getting up here as much as you want. If you ever have friends who start talking about getting a place in the mountains, just send them my way. I'll take care of them like I took care of you. And hey — wouldn't it be nice to have friends with a place nearby?"` :
+        `"Hey ${n}, I just helped another family find a home in your area — made me think of you! How's everything going? Hope you're making a million memories in that house. It still makes me happy that we found the right one."`
   );
 
   html += actionItem(
     `Anniversary: Send their home's current estimated value — useful AND unforgettable`,
     `Forget "happy home-iversary." Instead, send ${n} their home's estimated current value with context. This gives them genuinely useful financial information AND positions you as the market expert they should call when anyone they know is thinking about real estate. It is the perfect blend of valuable and memorable.`,
-    has('second-home') ?
-      `"${n}, can you believe it's been a year since you got your mountain place? I pulled some market data — your property has appreciated approximately $[X] since you bought it. The High Country market has been [trend]. Your investment is in great shape. If you ever want to know the full picture, or if any of your friends are thinking about getting a place up here, I'm always happy to run the numbers. Here's to many more mountain weekends. Cheers to year two!"` :
-      `"${n}, can you believe it's been a year? I was looking at market data and wanted you to know — your home has appreciated approximately $[X] since you bought it. Your investment is growing and you should feel great about that. If you ever want a full market update, or if anyone you know is curious about what their home is worth, I'm always happy to run the numbers. Cheers to year two!"`
+    has('investor') ?
+      `"${n}, one-year check-in on your investment: the property has [appreciated/held] to approximately $[value]. Comparable rents in the area are now [amount], which means your yield has [improved/held steady]. Here is your one-year snapshot — purchase price, current value, estimated annual rental income, and ROI. You are in a strong position. If you want to talk about what is next — whether it is another property or a 1031 — I have the numbers ready. Here's to building wealth, one property at a time."` :
+      has('second-home') ?
+        `"${n}, can you believe it's been a year since you got your mountain place? I pulled some market data — your property has appreciated approximately $[X] since you bought it. The High Country market has been [trend]. Your investment is in great shape. If you ever want to know the full picture, or if any of your friends are thinking about getting a place up here, I'm always happy to run the numbers. Here's to many more mountain weekends. Cheers to year two!"` :
+        `"${n}, can you believe it's been a year? I was looking at market data and wanted you to know — your home has appreciated approximately $[X] since you bought it. Your investment is growing and you should feel great about that. If you ever want a full market update, or if anyone you know is curious about what their home is worth, I'm always happy to run the numbers. Cheers to year two!"`
   );
 
   return html;
